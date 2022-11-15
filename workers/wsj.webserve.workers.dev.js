@@ -64,22 +64,9 @@ async function handleRequest(request) {
         modifiedRequest.headers.delete("referer");
 
         modifiedRequest.headers.delete("x-forwarded-proto");
+        modifiedRequest.headers.delete("user-agent");
+        modifiedRequest.headers.set("user-agent",'Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Mobile/15E148 Safari/604.1');
 
-
-//        console.log(modifiedRequest);
-
-        var hds=modifiedRequest.headers.entries();
-/*      var limit=0;
-        while(limit<100)
-        {
-            limit++;
-            try{
-            var lhd = hds.next();
-            console.log(lhd.value);
-            }catch(e){continue;}
-
-        }
-*/
         let res =  await fetch(modifiedRequest);
       
 
