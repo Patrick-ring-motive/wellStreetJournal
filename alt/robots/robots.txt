@@ -1,0 +1,25 @@
+User-agent: *
+Sitemap: https://wsj.webserve.workers.dev/sitemap.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/sitemap_topics.xml
+Sitemap: https://wsj.webserve.workers.dev/sitemaps/web/wsj/en/sitemap_wsj_en_index.xml
+Sitemap: https://wsj.webserve.workers.dev/live_news_sitemap.xml
+Sitemap: https://wsj.webserve.workers.dev/wsj_graphics_sitemap.xml
+Sitemap: https://wsj.webserve.workers.dev/sitemaps/web/wsj/en/sitemap_news_archive_index.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_article_types.xml
+Sitemap: https://wsj.webserve.workers.dev/authors_sitemap.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_article_list_sitemap.xml
+Sitemap: https://wsj.webserve.workers.dev/api-video/sitemaps/google/sitemap-google-news-video-wsj-en.asp
+Sitemap: https://wsj.webserve.workers.dev/api-video/sitemaps/google/sitemap-google-video-wsj-en.asp
+Sitemap: https://wsj.webserve.workers.dev/sitemaps/web/video/en/sitemap_video_en_index.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_pro_cb_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_pro_ai_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_pro_debt_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_pro_cyber_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_pro_vc_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_pro_pe_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/wsjsitemaps/wsj_pro_sb_google_news.xml
+Sitemap: https://wsj.webserve.workers.dev/coupons/sitemap.xml
+Sitemap: https://wsj.webserve.workers.dev/buyside/sitemaps/wsjbuyside_sitemap_index.xml
+
+Allow: /
