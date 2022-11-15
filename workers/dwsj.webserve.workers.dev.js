@@ -4,7 +4,7 @@ async function handleRequest(request) {
 
 //        console.log(url);
         if(url.pathname.indexOf('google9b9ccfe85609fdf9.html')>-1){
-            let css = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/mobileScripts/main/userScripts/iphone/wsj.com/google9b9ccfe85609fdf9.html');
+            let css = await fetch('https://github.com/Patrick-ring-motive/wellStreetJournal/blob/main/alt/verify/google9b9ccfe85609fdf9.html');
             let cssBdy = await css.text();
             let cssRes = new Response(cssBdy,css);
                 cssRes.headers.delete('Content-Type');
@@ -20,7 +20,7 @@ async function handleRequest(request) {
             return cssRes;
         }
         if(url.pathname.toLowerCase().indexOf('robots.txt')>-1){
-            let css = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/mobileScripts/main/userScripts/iphone/wsj.com/drobots.txt?'+new Date().getTime());
+            let css = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/main/alt/robots/drobots.txt?'+new Date().getTime());
             let cssBdy = await css.text();
             let cssRes = new Response(cssBdy,css);
                 cssRes.headers.delete('Content-Type');
@@ -28,15 +28,15 @@ async function handleRequest(request) {
             return cssRes;
         }
         if(url.pathname.toLowerCase().indexOf('wsjfixlinks.js')>-1){
-            let css = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/mobileScripts/main/userScripts/iphone/wsj.com/wsjFixLinks.js?'+new Date().getTime());
+            let css = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/main/alt/js/wsjFixLinks.js?'+new Date().getTime());
             let cssBdy = await css.text();
             let cssRes = new Response(cssBdy,css);
                 cssRes.headers.delete('Content-Type');
                 cssRes.headers.set('Content-Type','application/javascript');
             return cssRes;
         }
-        if(url.pathname.toLowerCase().indexOf('wsjadblock.css')>-1){
-            let css = await fetch('https://raw.githubusercontent.com/Patrick-ring-motive/mobileScripts/main/userScripts/iphone/wsj.com/wsjAdblock.css?'+new Date().getTime());
+        if(url.pathname.toLowerCase().indexOf('wsjmain.css')>-1){
+            let css = await fetch('ttps://raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/main/alt/css/wellstreet.css?'+new Date().getTime());
             let cssBdy = await css.text();
             let cssRes = new Response(cssBdy,css);
                 cssRes.headers.delete('Content-Type');
@@ -101,7 +101,7 @@ async function handleRequest(request) {
 
         bdy = bdy.replaceAll('www.wsj.com','wsj.webserve.workers.dev');
 
-        bdy = bdy.replace('<head>','<head><link rel="stylesheet" href="https://wsj.webserve.workers.dev/wsjAdblock.css?'+new Date().getTime()+'">');
+        bdy = bdy.replace('<head>','<head><link rel="stylesheet" href="https://wsj.webserve.workers.dev/wsjMain.css?'+new Date().getTime()+'">');
 
         bdy = bdy.replace('</body>','<script type="text/javascript" src="https://wsj.webserve.workers.dev/wsjFixLinks.js?'+new Date().getTime()+'"></script><script type="text/javascript" src="https://wsj.webserve.workers.dev/wsjSeo.js?'+new Date().getTime()+'"></script><a href="https://www.reddit.com/r/wellstreetjournal">⠀</a></body>');
 bdy=bdy.replace('<head>',`
