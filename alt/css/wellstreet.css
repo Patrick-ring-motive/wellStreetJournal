@@ -1,0 +1,441 @@
+:root {
+  --grey-baseline: #888888;
+  --off-blue: #8888BB; 
+  --top-cyan: #99DDFF;
+  --neon-blue: #0274B6;
+  --back-blue: #DDEEFF;
+  --back-blue-invert: #221100;
+}
+
+
+*
+{
+
+ font-weight: 40;
+ color:var(--grey-baseline);  
+ letter-spacing: 0.05em;
+ text-shadow:
+ -0.01em -0.01em 0 var(--neon-blue),
+  0.01em -0.01em 0 var(--neon-blue),
+ -0.01em  0.01em 0 var(--neon-blue),
+  0.01em  0.01em 0 var(--neon-blue);
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: var(--neon-blue);
+  text-stroke-width: 0.2px;
+  text-stroke-color: var(--neon-blue);
+}
+
+div[class*="videoThumb"],
+div[class*="vidThumb"],
+div[class*="WSJTheme--headlineText"]
+{
+   text-shadow:
+ -0.01em -0.01em 0 var(--neon-blue),
+  0.01em -0.01em 0 var(--neon-blue),
+ -0.01em  0.01em 0 var(--neon-blue),
+  0.01em  0.01em 0 var(--neon-blue);
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: var(--neon-blue);
+  text-stroke-width: 0.2px;
+  text-stroke-color: var(--neon-blue);
+}
+
+p[class*="WSJProTheme--summary"]>span,
+div.wsj-snippet-body>p,
+a[class*="style--subsection-link"],
+[class*="WSJTheme"]{
+
+   color:var(--off-blue);
+  text-stroke-width: 0px;
+  -webkit-text-stroke-width: 0px;
+  text-shadow:none;
+
+}
+
+
+h3[class*="style--sections-title"],
+span[class*="WSJTheme--listen-to-foe"],
+p[class*="WSJTheme--byline"],
+p[class*="WSJTheme--flashline"],
+p[class*="WSJTheme--summary"],
+span[class*="headlineText"],
+a[class*="SubSectionLink"],
+a[class*="style--subsection-link"],
+h3[class*="SectionsTitle"]
+{
+color: var(--off-blue) !important;
+}
+
+
+a[class*="style--burger-sections-link"],
+h2[class*="WSJTheme--hover-silver-gray"]
+{
+  
+  color: var(--grey-baseline);
+  
+}
+
+
+
+aside,
+iframe,
+img[src*="large-logo-light.svg"],
+div#account,
+a[title="WSJ.COM"]:after,
+a[title="Wellstreet"]:after,
+a[href*="https://wsj.webserve.workers.dev/newsletters"],
+a[href*="https://twitter.com"],
+[class*="ewsletter"],
+[id*="ewsletter"],
+a[title="Newsletters"],
+small[class="deloitte-footnote"],
+a[class*="linked-label__anchor"],
+div[class*="WSJDeloitteTheme--articleType"],
+div[class*="WSJTheme--foe-podcast-section"],
+span[class*="style--more-links-label"],
+div[class*="SubSectionMoreLinks"]>h4,
+div[class*="WSJProTheme--events-list"],
+div[class*="newsletters"],
+div[class*="WSJTheme--brand-wrapper"],
+div[class*="style--burger-tabs"],
+div[class*="InsetRichText"],
+div[class="more-articles"],
+div[class="style--user-wrapper"],
+div[class="style--hat-wrapper"],
+small[class="deloitte-disclaimer"],
+div[data-module-zone="headerBanner"],
+div[data-module-zone="more_articles"],
+a[href*="https://on.wsj.com"],
+div.wsj-snippet-body:after,
+[class*="WSJTheme--sponsor-link"],
+div[class*="padding-bottom"],
+div[class*="customer-nav"],
+a[href="https://www.wsj.com/tips"],
+a[href*="wsjshop.com/"],
+a[href*="wsjwine.com/"],
+a[href*="wsjplus.com/"],
+#follow-wsj,
+div#wrapper-AD_MOBILE2,
+div#cx-snippet-overlay,
+div.css-1vlbiim-Container,
+a[aria-label*="WSJ Logo"],
+div[aria-label*="Sponsored Offers"],
+div[data-skip-label*="Listen To Article"],
+div[aria-label*="What to Read Next"],
+div[aria-labelledby*="share-tool-label"],
+div[aria-label="Newsletter Sign Up"],
+div[aria-label*="Markets summary"],
+div[class*="article-body-tools"],
+div[class*="overlay-tabs"],
+div[class*="market-data-strip"],
+div[class*="WSJTheme--disclaimer"],
+div.adWrapper,
+div[class*="adWrapper"],
+div[class*="native-strip"],
+div[class*="SwapContentContainer"],
+div[class*="commentShareIcons"],
+div[class*="LoginButtonsWrapper"],
+div[class*="FollowButton"],
+div[class*="MdSector"],
+div[class*="login-buttons"],
+div[class*="logo-wrapper"],
+div[class*="mobileshare"],
+div[class*="highlights__container"],
+div[class*="WSJTheme--text-tool"],
+a[class*="comment-count"],
+div.audio-subscribe,
+iframe[title="Balance of Power"],
+footer,
+div[height="100px"],
+div[aria-label="Markets summary"],
+#my-account,
+#follow-wsj-world,
+#sign-up-for-newsletters-and-alerts,
+ufc-follow-author-widget,
+#cx-what-to-read-next,
+#elections2020-banner,
+div[display="flex"]>div[width="100%"]>span
+{
+   display: none !important;
+   visibility: hidden !important;
+   opacity: 0 !important;
+   max-height: 0px !important;
+   height: 0px !important;
+   transform: scale(0,0) !important;
+   position: absolute !important;
+   z-index: -99 !important;
+}
+
+
+section:after{max-height:0px;} 
+
+
+div[class*="style--del-container"],
+div[style="background-color:#f4f4f4"],
+header[role="banner"],
+#masthead-container,
+div[class*="mast-head"],
+div[class*="HeaderContainer"]
+{
+   background:transparent !important;
+   border:none !important;
+}
+
+button[aria-label="Menu"]:after,
+div[class*="style--burger"]:after,
+div[class*="style--topics-wrapper"]:after,
+button[data-testid="burger-menu"]:after,
+button[class*="style--burger"]:after,
+#masthead-container:after,
+button[style="cursor:pointer"]:after
+{
+border-bottom-left-radius: 7px;
+background-color: var(--top-cyan) !important;
+white-space: pre; 
+content:"WELL STREET\AJOURNAL";
+font-family: "Times New Roman", Times, serif;
+font-size: 8px;
+height: 20px;
+text-align: right;
+position:fixed;
+z-index: 999;
+top: 0px !important;
+right: 0px !important;
+color:var(--neon-blue);
+text-shadow:
+ -0.01em -0.01em 0 var(--neon-blue),
+  0.01em -0.01em 0 var(--neon-blue),
+ -0.01em  0.01em 0 var(--neon-blue),
+  0.01em  0.01em 0 var(--neon-blue);
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: var(--neon-blue);
+  text-stroke-width: 0.2px;
+  text-stroke-color: var(--neon-blue);
+}
+
+button[aria-label="Menu"],
+div[class*="style--burger"],
+div[class*="style--topics-wrapper"],
+button[data-testid="burger-menu"],
+button[class*="style--burger"],
+button[style="cursor:pointer"]
+{
+position: fixed; 
+background-color: var(--top-cyan) !important; 
+top: 0px !important;
+left: 0px !important;
+margin-left: 0px;
+padding-left: 0px;
+border-bottom-right-radius: 7px;
+color:var(--neon-blue);
+}
+
+html,
+div.wsj-jobs>section.reusableSlimlineHeader>nav,
+div.wsj-money>section.reusableSlimlineHeader>nav,
+a[class*="WSJTheme--foe-logo"],
+div[class*="videoThumb"],
+div[class*="style--burger-menu"],
+div[class*="full-head-wrapper"],
+div[class*="style--topics-wrapper"],
+img,
+svg,
+video,
+embed,
+object,
+div[class*="HeadlineContainer"],
+div[class*="vidThumb"],
+#big-top-caption
+{
+filter:invert(100%) hue-rotate(180deg);
+  
+}
+
+html,
+div.wsj-money,
+div.wsj-jobs,
+body[class="vsc-initialized"],
+div[class*="article-container"],
+div[class*="style--more-links"],
+figcaption,
+div[data-type="image"],
+div[class*="RibbonContainer"],
+nav[class*="NavContainer"],
+div[class*="WhatsNewsTheme"],
+#sections-scroll-target,
+input[type="search"],
+main
+{
+   
+background-color: var(--back-blue);
+
+}
+
+body,
+div[class*="style--more-links"]
+{
+background-color: var(--back-blue) !important;
+}
+
+li[class*="style--menu-item"]
+{
+  background-color:var(--grey-baseline);
+}
+
+a[title="Wellstreet"],
+a[title="WSJ.COM"],
+li[class*="style--menu-item"]>a[href*="/pro/"]
+{
+
+background-color:blue;
+  
+}
+
+
+#big-top-caption,
+h1[class*="BigTopHeadliner"],
+h1[class*="TopDek"],
+div[class*="HeadlineContainer"]
+{
+font-color:white;
+background-color:var(--back-blue-invert);
+filter: invert(1);
+}
+
+h1[class*="BigTopHeadline"],
+h2[class*="TopDek"],
+span[class*="CaptionSpan"],
+span[class*="Credit"]
+{
+  color: var(--grey-baseline) !important; 
+}
+
+div.card,
+section.reusableSlimlineHeader,
+header[classZ*="style--slimline"]>div[class*="style--overlay"],
+div[class^="css-"],
+div[class*="WSJTheme--thumb-overlay"],
+div[class*="WSJTheme"]
+{
+   background: transparent !important;
+   background-color: transparent !important;
+   margin: 0px !important;
+}
+
+div[class*="WSJTheme"]:after
+{
+   background: transparent !important;
+   background-color: transparent !important;
+   margin: 0px !important;
+}
+
+h3[class*="WSJTheme--headline"],
+button[id="sections"]
+{
+
+color:var(--grey-baseline) !important;
+
+}
+
+div[class*="card__paywalled_text"]
+{
+
+   max-height:none !important;
+
+}
+
+div[class*="card__paywalled_text"] ul{
+   display: none !important;
+   visibility: hidden !important;
+   opacity :0 !important;
+   max-height: 0px !important;
+   height: 0px !important;
+   transform: scale(0,0) !important;
+   position: absolute !important;
+   z-index: -99 !important;
+}
+div[class*="card__paywalled_text"] strong{
+   display: none !important;
+   visibility: hidden !important;
+   opacity: 0 !important;
+   max-height: 0px !important;
+   height: 0px !important;
+   transform: scale(0,0) !important;
+   position: absolute !important;
+   z-index: -99 !important;
+}
+
+
+a[class*="style--burger-sections-link"],
+div[class*="MoreArticlesInfoSection"],
+dev[class*="MoreArticlesInfoSection"]
+{
+
+   color:blue !important;
+
+}
+
+img[alt="WSJ Buyside Logo"]
+{
+filter:unset;
+}
+
+div[class*="full-head-wrapper"]{
+position:absolute;
+z-index:888;
+left:0px;
+width:100%;
+}
+
+
+
+div[class*="WSJTheme--headline"],
+div[class*="WSJTheme--timestamp"]
+{
+   padding:5px;
+}
+
+a[href="https://wsj.webserve.workers.dev/buyside?mod=nav_left_section"]
+{
+padding-top:5px;
+}
+
+img,
+svg,
+video
+{
+   padding:5%;
+}
+
+p,span,h1,h2,h3,pre,a,
+{
+ padding:1px;
+}
+
+div[class*="style--open--"]
+{
+poisiton:fixed;
+z-index:999;
+}
+
+span[class*="time-to-read"]
+{
+  
+  white-space: nowrap;
+  
+}
+
+
+a[href*="https://dwsj.webserve.workers.dev"]>img
+{
+max-width:90%;
+}
+
+div.card
+{
+
+border:none !important;
+
+}
+
+li.BrainhubCarouselItem{display:grid;}
