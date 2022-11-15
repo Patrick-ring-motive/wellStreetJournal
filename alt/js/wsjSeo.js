@@ -112,7 +112,7 @@ await sleep(999);
      
   for(let i=0;i<1;i++){try{
    
-   fetch(URL);
+  // fetch(URL);
   
  }catch(e){continue;}}
  
