@@ -40,6 +40,7 @@ div[class*="WSJTheme--headlineText"]
   text-stroke-color: var(--neon-blue);
 }
 
+p[data-type="paragraph"],
 p[class*="WSJProTheme--summary"]>span,
 div.wsj-snippet-body>p,
 a[class*="style--subsection-link"],
