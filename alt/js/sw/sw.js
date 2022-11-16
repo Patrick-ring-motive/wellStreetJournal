@@ -43,7 +43,7 @@ self.addEventListener('fetch', function (event) {
 	// CSS & JavaScript
 	// Offline-first
 	// Articles
-	if ((request.headers.get('Accept').toLowerCase().indexOf('text/css')>-1) || (request.headers.get('Accept').toLowerCase().indexOf('javascript')>-1) || (request.url.toLowerCase().indexOf('/articles/')>-1) || checkEndings(request.URL) ) {
+	if ((request.headers.get('Accept').toLowerCase().indexOf('text/css')>-1) || (request.headers.get('Accept').toLowerCase().indexOf('javascript')>-1) || (request.url.toLowerCase().indexOf('/articles/')>-1) || checkEndings(request.url) ) {
 		event.respondWith(
 			caches.match(request).then(function (response) {
 				return response || fetch(request).then(function (response) {
