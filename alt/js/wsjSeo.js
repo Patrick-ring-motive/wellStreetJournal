@@ -1,4 +1,4 @@
-
+/* <![CDATA[/* */
  window.sleep=function(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
@@ -115,7 +115,7 @@ await sleep(999);
   // fetch(URL);
   
  }catch(e){continue;}}
- 
+ return;
 } 
 
 
@@ -146,3 +146,4 @@ await sleep(1234);
 }
 
 setTimeout(async function(){processLinks();},10);
+/* ]]>/* */
