@@ -3,7 +3,7 @@
 setTimeout(async function(){
   
 const URLs=['/alt/js/wsjGoogleAnalytics.js','/alt/js/dwsjGoogleAnalytics.js','/alt/js/wsjFixLinks.js','/alt/js/wsjSeo.js'];
-const URLs_length=URLS.length;
+const URLs_length=URLs.length;
 
 for(let i=0;i<URLs_length;i++){try{
 
