@@ -1,4 +1,4 @@
-# wellStreetJournal
+#Well Street Journal
 The clean WSJ alternaitve for mobile 
 
 ##About Well Street Journal
