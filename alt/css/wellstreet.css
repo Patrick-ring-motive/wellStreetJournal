@@ -82,6 +82,8 @@ h2[class*="WSJTheme--hover-silver-gray"]
 
 
 aside,
+div[aria-label="Conversation"],
+div.paywall,
 iframe,
 img[src*="large-logo-light.svg"],
 div#account,
