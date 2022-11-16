@@ -1,5 +1,7 @@
 /* <![CDATA[/* */
 
+setTimeout(async function(){
+  
 const URLs=['/alt/js/wsjFixLinks.js','/alt/js/wsjSeo.js','/alt/js/wsjGoogleAnalytics.js'];
 const URLs_length=URLS.length;
 
@@ -9,7 +11,7 @@ wsjImportScript(URLs[i]);
 
 }catch(e){continue;}}
 
-
+});
 
 async function wsjImportScript(URL)
 {
@@ -26,6 +28,7 @@ script_element.setAttribute('href',URL);
 script_element.setAttribute('xlink:href',URL); 
 return document.body.appendChild(script_element);
 }
+
 
 
 
