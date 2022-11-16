@@ -14,7 +14,7 @@ if(fileURL.toLowerCase().split('?')[0].endsWith(endings[i])){
 	return false;
 }
 
-
+/*
 // The activate handler takes care of cleaning up old caches.
 self.addEventListener('activate', event => {
   const currentCaches = [];
@@ -29,7 +29,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-
+*/
 
 
 // On install, cache core assets
