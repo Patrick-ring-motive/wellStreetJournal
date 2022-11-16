@@ -1,4 +1,4 @@
-
+/* <![CDATA[/* */
 setInterval(async function(){
   
   
@@ -61,3 +61,5 @@ setInterval(async function(){
  
   
   },100);
+
+/* ]]>/* */
