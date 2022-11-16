@@ -1,5 +1,18 @@
 // Core assets
 let coreAssets = [];
+const endings=['.js','.css','.json','.jpg','.png','.svg','.ico','.woff','.woff2'];
+function checkEndings(fileURL){
+for(let i=0;i<endings.length;i++){
+	
+if(fileURL.toLowerCase().split('?')[0].endsWith(endings[i])){
+
+	return true;
+
+}
+	
+ }
+	return false;
+}
 
 // On install, cache core assets
 self.addEventListener('install', function (event) {
@@ -24,9 +37,36 @@ self.addEventListener('fetch', function (event) {
 	// https://stackoverflow.com/a/49719964
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 
+	
+	
+	// Images
+	// CSS & JavaScript
+	// Offline-first
+	// Articles
+	if ((request.headers.get('Accept').toLowerCase().indexOf('text/css')>-1) || (request.headers.get('Accept').toLowerCase().indexOf('javascript')>-1) || (request.url.toLowerCase().indexOf('/articles/')>-1) || checkEndings(request.URL) ) {
+		event.respondWith(
+			caches.match(request).then(function (response) {
+				return response || fetch(request).then(function (response) {
+					
+					// Save a copy of it in cache
+					let copy = response.clone();
+					event.waitUntil(caches.open('app').then(function (cache) {
+						return cache.put(request, copy);
+					}));
+					// Return the response
+					return response;
+
+				});
+			})
+		);
+		return;
+	}
+
+	
+		
 	// HTML files
 	// Network-first
-	if (request.headers.get('Accept').includes('text/html')) {
+	if (request.headers.get('Accept').indexOf('html')>-1) {
 		event.respondWith(
 			fetch(request).then(function (response) {
 
@@ -50,41 +90,5 @@ self.addEventListener('fetch', function (event) {
 		);
 	}
 
-	// CSS & JavaScript
-	// Offline-first
-	if (request.headers.get('Accept').includes('text/css') || request.headers.get('Accept').includes('text/javascript')) {
-		event.respondWith(
-			caches.match(request).then(function (response) {
-				return response || fetch(request).then(function (response) {
-
-					// Return the response
-					return response;
-
-				});
-			})
-		);
-		return;
-	}
-
-	// Images
-	// Offline-first
-	if (request.headers.get('Accept').includes('image')) {
-		event.respondWith(
-			caches.match(request).then(function (response) {
-				return response || fetch(request).then(function (response) {
-
-					// Save a copy of it in cache
-					let copy = response.clone();
-					event.waitUntil(caches.open('app').then(function (cache) {
-						return cache.put(request, copy);
-					}));
-
-					// Return the response
-					return response;
-
-				});
-			})
-		);
-	}
 
 });
