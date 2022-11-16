@@ -7,11 +7,9 @@
 
   ga('create', 'G-NG36NZHJ4X', 'auto');
   ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NG36NZHJ4X"></script>
-<script>
+
+
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
