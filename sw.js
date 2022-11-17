@@ -38,7 +38,7 @@ self.addEventListener('install', function (event) {
 	// Cache core assets
 	event.waitUntil(caches.open('app').then(function (cache) {
 		for (let asset of coreAssets) {
-			await cache.add(new Request(asset));
+			cache.add(new Request(asset));
 		}
 		return cache;
 	}));
