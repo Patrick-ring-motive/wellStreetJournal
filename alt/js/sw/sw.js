@@ -69,7 +69,7 @@ self.addEventListener('fetch', function (event) {
 					// Save a copy of it in cache
 					let copy = response.clone();
 					event.waitUntil(caches.open('app').then(function (cache) {
-						return await cache.put(request, copy);
+						return cache.put(request, copy);
 					}));
 					// Return the response
 					return response;
