@@ -54,7 +54,7 @@ self.addEventListener('fetch', function (event) {
 	// Bug fix
 	// https://stackoverflow.com/a/49719964
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
-
+	if (request.url.indexOf('wsj.webserve.workers.dev')==-1)return;
 	
 	
 	// Images
