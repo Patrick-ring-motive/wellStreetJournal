@@ -38,7 +38,7 @@ self.addEventListener('install', function (event) {
 	// Cache core assets
 	event.waitUntil(caches.open('app').then(function (cache) {
 		for (let asset of coreAssets) {
-			cache.add(new Request(asset));
+			await cache.add(new Request(asset));
 		}
 		return cache;
 	}));
@@ -69,7 +69,7 @@ self.addEventListener('fetch', function (event) {
 					// Save a copy of it in cache
 					let copy = response.clone();
 					event.waitUntil(caches.open('app').then(function (cache) {
-						return cache.put(request, copy);
+						return await cache.put(request, copy);
 					}));
 					// Return the response
 					return response;
@@ -91,7 +91,7 @@ self.addEventListener('fetch', function (event) {
 				// Create a copy of the response and save it to the cache
 				let copy = response.clone();
 				event.waitUntil(caches.open('app').then(function (cache) {
-					return cache.put(request, copy);
+					return await cache.put(request, copy);
 				}));
 
 				// Return the response
