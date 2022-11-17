@@ -91,7 +91,7 @@ self.addEventListener('fetch', function (event) {
 				// Create a copy of the response and save it to the cache
 				let copy = response.clone();
 				event.waitUntil(caches.open('app').then(function (cache) {
-					return await cache.put(request, copy);
+					return cache.put(request, copy);
 				}));
 
 				// Return the response
