@@ -15,16 +15,16 @@
 
  font-weight: 40;
  color:var(--grey-baseline);  
- letter-spacing: 0.05em;
  text-shadow:
- -0.01em -0.01em 0 var(--neon-blue),
-  0.01em -0.01em 0 var(--neon-blue),
- -0.01em  0.01em 0 var(--neon-blue),
-  0.01em  0.01em 0 var(--neon-blue);
+ -0.01em -0.01em 0 var(--off-blue),
+  0.01em -0.01em 0 var(--off-blue),
+ -0.01em  0.01em 0 var(--off-blue),
+  0.01em  0.01em 0 var(--off-blue);
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: var(--neon-blue);
   text-stroke-width: 0.2px;
-  text-stroke-color: var(--neon-blue);
+  text-stroke-color: var(--off-blue);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 div[class*="videoThumb"],
@@ -53,8 +53,7 @@ a[class*="style--subsection-link"],
   text-stroke-width: 0px;
   -webkit-text-stroke-width: 0px;
   text-shadow:none;
-letter-spacing:0em;
-font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
