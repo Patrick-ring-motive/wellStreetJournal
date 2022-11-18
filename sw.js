@@ -58,7 +58,7 @@ self.addEventListener('fetch', function (event) {
 	// https://stackoverflow.com/a/49719964
 	if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') return;
 	if (!request.url.startsWith(self.location.origin))return;
-	
+	if (request.url.indexOf('GoogleAnalytics')>-1)return;
 	
 	// Images
 	// CSS & JavaScript
@@ -110,7 +110,14 @@ self.addEventListener('fetch', function (event) {
 
 				// If there's no item in cache, respond with a fallback
 				return caches.match(request).then(function (response) {
-					return response || caches.match('/offline.html');
+				return response || 	caches.match(request,loose).then(function (response) {
+				return response || 	caches.match(request,looser).then(function (response) {
+				return response || 	caches.match(request,loosest).then(function (response) {
+				return response ||	caches.match('/offline.html');
+				);
+				});
+				});
+				});
 				});
 
 			})
