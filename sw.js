@@ -1,6 +1,6 @@
 // Core assets
 let coreAssets = [];
-const endings=['.js','.jsx','.ts','.tsx','.css','.scss','.json','.jpg','.png','.svg','.ico','.woff','.woff2'];
+const endings=['.js','.jsx','.ts','.tsx','.css','.scss','.json','.jpg','.png','.gif','.webp','.svg','.ico','.woff','.woff2'];
 function checkEndings(fileURL){
 for(let i=0;i<endings.length;i++){
 	
