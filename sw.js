@@ -1,4 +1,7 @@
 // Core assets
+const loose={ignoreVary:true,ignoreMethod:false,ignoreSearch:false};
+const looser={ignoreVary:true,ignoreMethod:true,ignoreSearch:false};
+const loosest={ignoreVary:true,ignoreMethod:true,ignoreSearch:true};
 let coreAssets = [];
 const endings=['.js','.jsx','.ts','.tsx','.css','.scss','.json','.jpg','.png','.gif','.webp','.svg','.ico','.woff','.woff2'];
 function checkEndings(fileURL){
@@ -64,7 +67,10 @@ self.addEventListener('fetch', function (event) {
 	if ((request.headers.get('accept').toLowerCase().indexOf('text/css')>-1) || (request.headers.get('Accept').toLowerCase().indexOf('javascript')>-1) || (request.url.toLowerCase().indexOf('/articles/')>-1) || checkEndings(request.url) ) {
 		event.respondWith(
 			caches.match(request).then(function (response) {
-				return response || fetch(request).then(function (response) {
+				return response || 	caches.match(request,loose).then(function (response) {
+				return response || 	caches.match(request,looser).then(function (response) {
+				return response || 	caches.match(request,loosest).then(function (response) {
+				return response ||	fetch(request).then(function (response) {
 					
 					// Save a copy of it in cache
 					let copy = response.clone();
@@ -74,6 +80,9 @@ self.addEventListener('fetch', function (event) {
 					// Return the response
 					return response;
 
+				});
+				});
+				});
 				});
 			})
 		);
