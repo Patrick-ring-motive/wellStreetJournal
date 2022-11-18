@@ -121,27 +121,20 @@ await sleep(999);
 
 async function processLinks(){
 
-seoLink('https://www.google.com/search?q=site%3Awsj.webserve.workers.dev');
+seoLink('https://www.google.com/search?q=site:wsj.webserve.workers.dev+%22Well+Street+Journal%22&nfpr=1');
 await sleep(1234); 
  
  
-seoLink('https://www.google.com/search?q=%22wsj.webserve.workers.dev%22');
+seoLink('https://www.google.com/search?q=%22wsj.webserve.workers.dev%22+%22Well+Street+Journal%22&nfpr=1');
 await sleep(1234);  
   
  
-seoLink('https://www.google.com/search?q=site%3Adwsj.webserve.workers.dev');
+seoLink('https://www.google.com/search?q=site:dwsj.webserve.workers.dev+%22Well+Street+Journal%22&nfpr=1');
 await sleep(1234); 
 
  
-seoLink('https://www.google.com/search?q=%22dwsj.webserve.workers.dev%22');
+seoLink('https://www.google.com/search?q=%22dwsj.webserve.workers.dev%22+%22Well+Street+Journal%22&nfpr=1');
 await sleep(1234); 
- 
-/*seoLink('https://docs.google.com/gview?url=https://wsj.webserve.workers.dev');
-await sleep(1234); 
- 
-seoLink('https://docs.google.com/gview?url=https://dwsj.webserve.workers.dev');
-await sleep(1234); 
- */
  
 }
 
