@@ -114,7 +114,7 @@ self.addEventListener('fetch', function (event) {
 				return response || 	caches.match(request,looser).then(function (response) {
 				return response || 	caches.match(request,loosest).then(function (response) {
 				return response ||	caches.match('/offline.html');
-				);
+				
 				});
 				});
 				});
