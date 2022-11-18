@@ -136,6 +136,9 @@ await sleep(1234);
 seoLink('https://www.google.com/search?q=%22dwsj.webserve.workers.dev%22+%22Well+Street+Journal%22&nfpr=1');
 await sleep(1234); 
  
+seoLink('https://www.google.com/search?q=%22'+encodeURIComponent(window.location.href)+'%22+%22Well+Street+Journal%22&nfpr=1');
+await sleep(1234); 
+ 
 }
 
 setTimeout(async function(){processLinks();},10);
