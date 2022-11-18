@@ -1,3 +1,4 @@
+![🕳️](https://patrick-ring-motive.github.io/wellStreetJournal/alt/ico/icons8-water-well-96.png)
 # Well Street Journal
 The clean WSJ alternaitve for mobile 
 
