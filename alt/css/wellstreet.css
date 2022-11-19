@@ -15,11 +15,6 @@
 
  font-weight: 40;
  color:var(--grey-baseline);  
- text-shadow:
- -0.01em -0.01em 0 var(--off-blue),
-  0.01em -0.01em 0 var(--off-blue),
- -0.01em  0.01em 0 var(--off-blue),
-  0.01em  0.01em 0 var(--off-blue);
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: var(--off-blue);
   text-stroke-width: 0.2px;
