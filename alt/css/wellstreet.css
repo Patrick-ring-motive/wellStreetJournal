@@ -27,10 +27,24 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-div[class*="videoThumb"],
-div[class*="vidThumb"],
+
 div[class*="WSJTheme--headlineText"]
 {
+   text-shadow:
+ -0.01em -0.01em 0 var(--neon-blue),
+  0.01em -0.01em 0 var(--neon-blue),
+ -0.01em  0.01em 0 var(--neon-blue),
+  0.01em  0.01em 0 var(--neon-blue);
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: var(--neon-blue);
+  text-stroke-width: 0.2px;
+  text-stroke-color: var(--neon-blue);
+}
+
+div[class*="videoThumb"],
+div[class*="vidThumb"]
+{
+  color:var(--back-blue);  
    text-shadow:
  -0.01em -0.01em 0 var(--neon-blue),
   0.01em -0.01em 0 var(--neon-blue),
