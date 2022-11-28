@@ -185,7 +185,9 @@ ufc-follow-author-widget,
 #cx-what-to-read-next,
 #elections2020-banner,
 div[display="flex"]>div[width="100%"]>span,
-parsererror
+parsererror,
+parsererror>div,
+parsererror>h3
 {
    display: none !important;
    visibility: hidden !important;
