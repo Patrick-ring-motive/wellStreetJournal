@@ -1,5 +1,5 @@
 /* <![CDATA[/* */
-
+document.getElementsByTagName('html')[0].setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
 async function forceLink(link_element,URL){
  
 link_element.src=URL;
