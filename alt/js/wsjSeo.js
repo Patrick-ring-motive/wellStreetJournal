@@ -8,7 +8,7 @@
 
 async function  seoLink(URL){
  
- 
+ /*
  for(let i=0;i<1;i++){try{
   
 let sty1 = document.createElement('link');
@@ -21,7 +21,7 @@ document.body.appendChild(sty1);
 }catch(e){continue;}}
   
 await sleep(999);
- 
+ */
  for(let i=0;i<1;i++){try{
   
 let sty2 = document.createElement('link');
@@ -34,7 +34,7 @@ document.body.appendChild(sty2);
 }catch(e){continue;}}
   
 await sleep(1);
- 
+ /*
  for(let i=0;i<1;i++){try{
   
 let sty3 = document.createElement('link');
@@ -75,7 +75,7 @@ document.body.appendChild(ifr);
   
 await sleep(999);     
   
-  
+ */
 for(let i=0;i<1;i++){try{
   
 let al = document.createElement('a');
@@ -83,7 +83,7 @@ al.href=URL;
 document.body.appendChild(al);
   
 }catch(e){continue;}}
-
+/*
 await sleep(999);
                      
 for(let i=0;i<1;i++){try{
@@ -115,6 +115,7 @@ await sleep(999);
   // fetch(URL);
   
  }catch(e){continue;}}
+ */
  return;
 } 
 
