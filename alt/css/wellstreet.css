@@ -32,14 +32,14 @@
 div[class*="WSJTheme--headlineText"]
 {
    text-shadow:
- -0.01em -0.01em 0 var(--neon-blue),
-  0.01em -0.01em 0 var(--neon-blue),
- -0.01em  0.01em 0 var(--neon-blue),
-  0.01em  0.01em 0 var(--neon-blue);
-  -webkit-text-stroke-width: 0.2px;
-  -webkit-text-stroke-color: var(--neon-blue);
-  text-stroke-width: 0.2px;
-  text-stroke-color: var(--neon-blue);
+ -0.01em -0.01em 0 var(--back-blue),
+  0.01em -0.01em 0 var(--back-blue),
+ -0.01em  0.01em 0 var(--back-blue),
+  0.01em  0.01em 0 var(--back-blue) !important;
+  -webkit-text-stroke-width: 0.2px !important;
+  -webkit-text-stroke-color: var(--back-blue) !important;
+  text-stroke-width: 0.2px !important;
+  text-stroke-color: var(--back-blue) !important;
 }
 
 div[class*="videoThumb"],
