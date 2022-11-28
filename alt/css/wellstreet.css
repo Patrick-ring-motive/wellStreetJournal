@@ -29,7 +29,7 @@
 }
 
 
-div[class*="WSJTheme--headlineText"]
+[class*="WSJTheme--headlineText"]
 {
    text-shadow:
  -0.01em -0.01em 0 var(--back-blue),
