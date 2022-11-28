@@ -184,7 +184,8 @@ div[aria-label="Markets summary"],
 ufc-follow-author-widget,
 #cx-what-to-read-next,
 #elections2020-banner,
-div[display="flex"]>div[width="100%"]>span
+div[display="flex"]>div[width="100%"]>span,
+parsererror
 {
    display: none !important;
    visibility: hidden !important;
