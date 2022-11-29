@@ -1,6 +1,8 @@
 
 fixScriptTags();
+fixStyleTags();
 setInterval(async function(){fixScriptTags();},1002);
+setInterval(async function(){fixStyleTags();},1003);
 
 
 
