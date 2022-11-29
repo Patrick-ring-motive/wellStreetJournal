@@ -1,5 +1,15 @@
 
 
+function copyAttributes(source, target) {
+  const source_attributes = Array.from(source.attributes);
+  const source_attribute_length = source_attributes.length;
+  for(let i=0;i<source_attributes_length;i++){try{
+  
+    target.setAttribute(source_attributes[i].nodeName,source_attributes[i].nodeValue);
+  
+  }catch(e){continue;}}
+}
+
 
 function replaceEscapes(str){
 
@@ -10,6 +20,7 @@ return str.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>')
 function recreateScript(elem,str){
   
   let new_script = document.createElement('script');
+  copyAttributes(elem,new_script);
   let script_parent=elem.parentNode;
 
   new_script.innerHTML = str;
@@ -23,6 +34,7 @@ function recreateScript(elem,str){
 function recreateStyle(elem,str){
   
   let new_style = document.createElement('style');
+  copyAttributes(elem,new_style);
   let style_parent=elem.parentNode;
 
   new_style.innerHTML = str;
