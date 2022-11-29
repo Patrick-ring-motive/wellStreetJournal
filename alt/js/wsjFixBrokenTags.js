@@ -1,4 +1,5 @@
 
+/* <![CDATA[/* */
 
 function copyAttributes(source, target) {
   const source_attributes = Array.from(source.attributes);
@@ -59,7 +60,7 @@ let old_script = scripts[i].innerHTML;
   let script_rewrite=replaceEscapes(script_content);
 
     if(old_script.length>script_rewrite.length){
-    
+    if(script_rewrite.indexOf('/* <![CDATA[/* */')==-1){script_rewrite='/* <![CDATA[/* */'+script_rewrite+'/* ]]>/* */';}
     recreateScript(scripts[i],script_rewrite);
     
     }
@@ -85,7 +86,7 @@ let old_style = styles[i].innerHTML;
   
   let style_rewrite=replaceEscapes(style_content);
     if(old_style.length>style_rewrite.length){
-    
+        if(style_rewrite.indexOf('/* <![CDATA[/* */')==-1){style_rewrite='/* <![CDATA[/* */'+style_rewrite+'/* ]]>/* */';}
     recreateStyle(styles[i],style_rewrite);
     
     }
@@ -102,3 +103,4 @@ fixScriptTags();
 fixStyleTags();
 setInterval(async function(){fixScriptTags();},1002);
 setInterval(async function(){fixStyleTags();},1003);
+/* ]]>/* */
