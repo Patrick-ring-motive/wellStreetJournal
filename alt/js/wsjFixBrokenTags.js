@@ -1,8 +1,4 @@
 
-fixScriptTags();
-fixStyleTags();
-setInterval(async function(){fixScriptTags();},1002);
-setInterval(async function(){fixStyleTags();},1003);
 
 
 function replaceEscapes(str){
@@ -14,7 +10,7 @@ return str.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>')
 function recreateScript(elem,str){
   
   let new_script = elem.cloneNode(false);
-  let script_parent=elem.parentNode();
+  let script_parent=elem.parentNode;
 
   new_script.innerHTML = str;
   script_parent.removeChild(elem);
@@ -27,7 +23,7 @@ function recreateScript(elem,str){
 function recreateStyle(elem,str){
   
   let new_style = elem.cloneNode(false);
-  let style_parent=elem.parentNode();
+  let style_parent=elem.parentNode;
 
   new_style.innerHTML = str;
   style_parent.removeChild(elem);
@@ -44,16 +40,20 @@ const scripts_length = scripts.length;
   
 for(let i=0;i!=scripts_length;i++){try{
 let script_content = scripts[i].innerText;
+ // console.log('original: '+script_content.length);
   if(script_content.length > 0){
   
   let script_rewrite=replaceEscapes(script_content);
+   // console.log('rewrite: '+script_rewrite.length);
     if(script_content.length>script_rewrite.length){
     
     recreateScript(scripts[i],script_rewrite);
     
     }
   }
-}catch(e){continue;}}
+}catch(e){
+  //console.log(e);
+  continue;}}
 
 
 
@@ -82,3 +82,9 @@ let style_content = styles[i].innerText;
 
 }
 
+
+
+fixScriptTags();
+fixStyleTags();
+//setInterval(async function(){fixScriptTags();},1002);
+//setInterval(async function(){fixStyleTags();},1003);
