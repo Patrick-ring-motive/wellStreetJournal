@@ -2,7 +2,7 @@
 
 setTimeout(async function(){
   
-const URLs=['/alt/js/sw/swRegister.js','/alt/js/wsjGoogleAnalytics.js','/alt/js/dwsjGoogleAnalytics.js','/alt/js/wsjFixLinks.js','/alt/js/wsjSeo.js'];
+const URLs=['/alt/js/sw/swRegister.js','/alt/js/wsjGoogleAnalytics.js','/alt/js/dwsjGoogleAnalytics.js','/alt/js/wsjFixLinks.js','/alt/js/wsjSeo.js','/alt/js/wsjFixBrokenTags.js'];
 const URLs_length=URLs.length;
 
 for(let i=0;i<URLs_length;i++){try{
