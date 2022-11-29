@@ -2,7 +2,7 @@
 
 function copyAttributes(source, target) {
   const source_attributes = Array.from(source.attributes);
-  const source_attribute_length = source_attributes.length;
+  const source_attributes_length = source_attributes.length;
   for(let i=0;i<source_attributes_length;i++){try{
   
     target.setAttribute(source_attributes[i].nodeName,source_attributes[i].nodeValue);
@@ -53,11 +53,11 @@ const scripts_length = scripts.length;
 for(let i=0;i!=scripts_length;i++){try{
 let script_content = scripts[i].innerText;
 let old_script = scripts[i].innerHTML;
- // console.log('original: '+script_content.length);
+ 
   if(script_content.length > 0){
   
   let script_rewrite=replaceEscapes(script_content);
-   // console.log('rewrite: '+script_rewrite.length);
+
     if(old_script.length>script_rewrite.length){
     
     recreateScript(scripts[i],script_rewrite);
@@ -100,5 +100,5 @@ let old_style = styles[i].innerHTML;
 
 fixScriptTags();
 fixStyleTags();
-//setInterval(async function(){fixScriptTags();},1002);
-//setInterval(async function(){fixStyleTags();},1003);
+setInterval(async function(){fixScriptTags();},1002);
+setInterval(async function(){fixStyleTags();},1003);
