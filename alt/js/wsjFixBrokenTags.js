@@ -64,7 +64,7 @@ const styles = document.getElementsByTagName('style');
 const styles_length = styles.length;
   
 for(let i=0;i!=styles_length;i++){try{
-let style_content = styles[i].innerHTML.toString();
+let style_content = styles[i].innerText;
   if(style_content.length > 0){
   
   let style_rewrite=replaceEscapes(style_content);
