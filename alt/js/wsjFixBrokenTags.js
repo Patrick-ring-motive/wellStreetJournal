@@ -9,7 +9,7 @@ return str.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>')
 
 function recreateScript(elem,str){
   
-  let new_script = elem.cloneNode(false);
+  let new_script = document.createElement('script');
   let script_parent=elem.parentNode;
 
   new_script.innerHTML = str;
@@ -22,7 +22,7 @@ function recreateScript(elem,str){
 
 function recreateStyle(elem,str){
   
-  let new_style = elem.cloneNode(false);
+  let new_style = document.createElement('style');
   let style_parent=elem.parentNode;
 
   new_style.innerHTML = str;
@@ -35,7 +35,7 @@ function recreateStyle(elem,str){
 
 async function fixScriptTags(){
   
-const scripts = document.getElementsByTagName('script');
+const scripts = document.querySelectorAll('script:not([rewritten])');
 const scripts_length = scripts.length;
   
 for(let i=0;i!=scripts_length;i++){try{
@@ -63,7 +63,7 @@ let old_script = scripts[i].innerHTML;
 
 async function fixStyleTags(){
   
-const styles = document.getElementsByTagName('style');
+const styles = document.querySelectorAll('style:not([rewritten])');
 const styles_length = styles.length;
   
 for(let i=0;i!=styles_length;i++){try{
