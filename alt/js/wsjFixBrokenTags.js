@@ -18,6 +18,7 @@ function recreateScript(elem,str){
 
   new_script.innerHTML = str;
   script_parent.removeChild(elem);
+  new_script.setAttribute('rewritten','rewritten');
   script_parent.appendChild(new_script);
   
 }
@@ -30,6 +31,7 @@ function recreateStyle(elem,str){
 
   new_style.innerHTML = str;
   style_parent.removeChild(elem);
+  new_style.setAttribute('rewritten','rewritten');
   style_parent.appendChild(new_style);
   
 }
