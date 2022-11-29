@@ -40,12 +40,13 @@ const scripts_length = scripts.length;
   
 for(let i=0;i!=scripts_length;i++){try{
 let script_content = scripts[i].innerText;
+let old_script = scripts[i].innerHTML;
  // console.log('original: '+script_content.length);
   if(script_content.length > 0){
   
   let script_rewrite=replaceEscapes(script_content);
    // console.log('rewrite: '+script_rewrite.length);
-    if(script_content.length>script_rewrite.length){
+    if(old_script.length>script_rewrite.length){
     
     recreateScript(scripts[i],script_rewrite);
     
@@ -67,10 +68,11 @@ const styles_length = styles.length;
   
 for(let i=0;i!=styles_length;i++){try{
 let style_content = styles[i].innerText;
+let old_style = styles[i].innerHTML;
   if(style_content.length > 0){
   
   let style_rewrite=replaceEscapes(style_content);
-    if(style_content.length>style_rewrite.length){
+    if(old_style.length>style_rewrite.length){
     
     recreateStyle(styles[i],style_rewrite);
     
