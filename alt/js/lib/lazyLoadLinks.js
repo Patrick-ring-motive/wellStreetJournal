@@ -63,4 +63,4 @@ function lazyLoadLinks() {
 
 }
 
-setInterval(async function() { lazyLoadLinks(); }, 1000);
+setInterval(async function() { lazyLoadLinks(); }, 5005);
