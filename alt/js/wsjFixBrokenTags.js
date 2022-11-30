@@ -52,7 +52,7 @@ const scripts = document.querySelectorAll('script:not([rewritten])');
 const scripts_length = scripts.length;
   
 for(let i=0;i!=scripts_length;i++){try{
-let script_content = scripts[i].innerText;
+let script_content = scripts[i].textContent;
 let old_script = scripts[i].innerHTML;
  
   if(script_content.length > 0){
@@ -80,7 +80,7 @@ const styles = document.querySelectorAll('style:not([rewritten])');
 const styles_length = styles.length;
   
 for(let i=0;i!=styles_length;i++){try{
-let style_content = styles[i].innerText;
+let style_content = styles[i].textContent;
 let old_style = styles[i].innerHTML;
   if(style_content.length > 0){
   
