@@ -43,6 +43,21 @@ function loadLink(anchor) {
 }
 
 function lazyLoadLinks() {
+  
+  const article_links = document.querySelectorAll('a[href*="articles"]:not([lazyLoaded])');
+  const article_links_length = article_links.length;
+  for (let i = 0; i < article_links_length; i++) {
+    try {
+      let la = article_links[i];
+      if (checkVisible(la) && (hasVisibleText(la))) {
+
+
+
+        loadLink(la);
+        return;
+      }
+    } catch (e) {continue;}
+  }
 
   const links = document.querySelectorAll('a:not([lazyLoaded])');
   const links_length = links.length;
@@ -56,11 +71,11 @@ function lazyLoadLinks() {
         loadLink(la);
         return;
       }
-    } catch (e) { }
+    } catch (e) {continue;}
   }
 
 
 
 }
 
-setInterval(async function() { lazyLoadLinks(); }, 5005);
+setInterval(async function() { lazyLoadLinks(); }, 2505);
