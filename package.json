@@ -1,0 +1,24 @@
+{
+  "name": "wellstreetjournal",
+  "version": "1.0.0",
+  "description": "![🕳️](https://patrick-ring-motive.github.io/wellStreetJournal/alt/ico/icons8-water-well-96.png) # Well Street Journal The clean WSJ alternative for mobile",
+  "main": "sw.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Patrick-ring-motive/wellStreetJournal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Patrick-ring-motive/wellStreetJournal/issues"
+  },
+  "homepage": "https://github.com/Patrick-ring-motive/wellStreetJournal#readme",
+  "dependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
