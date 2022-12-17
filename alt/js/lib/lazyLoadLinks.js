@@ -1,3 +1,16 @@
+import './sleep.js';
+
+
+
+async function main(){
+
+  setInterval(async function() {
+    await idle();
+    lazyLoadLinks(); 
+  }, 2505);
+
+}
+main();
 
 
 
@@ -50,9 +63,6 @@ function lazyLoadLinks() {
     try {
       let la = article_links[i];
       if (checkVisible(la) && (hasVisibleText(la))) {
-
-
-
         loadLink(la);
         return;
       }
@@ -65,9 +75,6 @@ function lazyLoadLinks() {
     try {
       let la = links[i];
       if (checkVisible(la) && (hasVisibleText(la))) {
-
-
-
         loadLink(la);
         return;
       }
@@ -78,4 +85,4 @@ function lazyLoadLinks() {
 
 }
 
-setInterval(async function() { lazyLoadLinks(); }, 2505);
+

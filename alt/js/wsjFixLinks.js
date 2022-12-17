@@ -1,5 +1,67 @@
 /* <![CDATA[/* */
+
+import './lib/sleep.js'
+
+
+async function main(){
+  
 document.getElementsByTagName('html')[0].setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
+
+
+///////////*start script execution*///////////////////
+  await idle();
+fixDomainLinks();
+
+setInterval(async function(){
+  await idle();
+  fixDomainLinks();
+},1000);
+
+setInterval(async function(){
+  await unblock();
+  if(document.querySelector('a[href*="wsjshop.com/"]')){
+
+   let dswj = document.querySelector('a[href*="wsjshop.com/"]');
+   dswj.innerText='Consulting';
+   dswj.href="https://dwsj.webserve.workers.dev/";
+  
+}
+ 
+  let spans=document.querySelectorAll('h2>span');
+  const spans_length=spans.length;
+  for(let i=0;i<spans_length;i++){
+    try{
+      
+      if(spans[i].innerText=='Global Calendar'){
+      spans[i].innerText='';
+      }
+      
+      if(spans[i].innerText.indexOf('NEWSLETTER')>-1){
+      spans[i].innerText='';
+      }
+  
+    }catch(e){continue;}
+  }
+  
+  
+  let wsj=document.querySelectorAll('a[title="WSJ.COM"]');
+  const wsj_length=wsj.length;
+  
+    for(let i=0;i<wsj_length;i++){try{
+      
+      wsj[i].innerText = 'WELL STREET HOME';
+      wsj[i].title = 'Wellstreet';
+  
+    }catch(e){continue;}}
+    
+ 
+  
+  },100);
+
+}
+
+main();
+//////start funcs///
 async function forceLink(link_element,URL){
  
 link_element.src=URL;
@@ -79,50 +141,6 @@ replaceSrcByQuery('[src^="/"],[src^="./"],[src^="https://'+xdomain+'"],[src^="ht
 
 
 }
-///////////*start script execution*///////////////////
-fixDomainLinks();
-setInterval(async function(){fixDomainLinks();});
-setInterval(async function(){fixDomainLinks();},1000);
 
-setInterval(async function(){
-  
-  if(document.querySelector('a[href*="wsjshop.com/"]')){
-
-   let dswj = document.querySelector('a[href*="wsjshop.com/"]');
-   dswj.innerText='Consulting';
-   dswj.href="https://dwsj.webserve.workers.dev/";
-  
-}
- 
-  let spans=document.querySelectorAll('h2>span');
-  const spans_length=spans.length;
-  for(let i=0;i<spans_length;i++){
-    try{
-      
-      if(spans[i].innerText=='Global Calendar'){
-      spans[i].innerText='';
-      }
-      
-      if(spans[i].innerText.indexOf('NEWSLETTER')>-1){
-      spans[i].innerText='';
-      }
-  
-    }catch(e){continue;}
-  }
-  
-  
-  let wsj=document.querySelectorAll('a[title="WSJ.COM"]');
-  const wsj_length=wsj.length;
-  
-    for(let i=0;i<wsj_length;i++){try{
-      
-      wsj[i].innerText = 'WELL STREET HOME';
-      wsj[i].title = 'Wellstreet';
-  
-    }catch(e){continue;}}
-    
- 
-  
-  },100);
 
 /* ]]>/* */
