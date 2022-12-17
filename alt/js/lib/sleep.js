@@ -13,7 +13,7 @@ wandow.idle = function() {
 
 wandow.unblock = function() {
   return new Promise((resolve) => {
-    requestIdleCallback(resolve, 100);
+    requestIdleCallback(resolve, { timeout: 100 });
     requestAnimationFrame(resolve);
   });
 }
