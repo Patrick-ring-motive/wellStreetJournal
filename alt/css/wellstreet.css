@@ -348,7 +348,8 @@ section.reusableSlimlineHeader,
 header[classZ*="style--slimline"]>div[class*="style--overlay"],
 div[class^="css-"],
 div[class*="WSJTheme--thumb-overlay"],
-div[class*="WSJTheme"]
+div[class*="WSJTheme"],
+h3[class*="WSJTheme--headline"]
 {
    background: transparent !important;
    background-color: transparent !important;
@@ -369,6 +370,7 @@ button[id="sections"]
 color:var(--grey-baseline) !important;
 
 }
+
 
 div[class*="card__paywalled_text"]
 {
