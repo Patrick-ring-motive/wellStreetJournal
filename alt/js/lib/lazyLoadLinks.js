@@ -22,7 +22,7 @@ function loadLink(anchor) {
   let l = document.createElement('link');
   l.rel = "prefetch";
   l.href = anchor.href;
-  document.body.appendChild(l);
+ // document.body.appendChild(l);
   if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
 
     let s = document.createElement('script');
