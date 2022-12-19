@@ -7,15 +7,26 @@ wandow.sleep = function(ms) {
   });
 }
 
-wandow.idle = function() {
-  return new Promise((resolve) => {
-    requestIdleCallback(resolve);
-  });
-}
+
 
 wandow.unblock = function() {
   return new Promise((resolve) => {
     requestIdleCallback(resolve, { timeout: 100 });
     requestAnimationFrame(resolve);
+  });
+}
+
+
+wandow.idleCheck = async function(resolve) {
+
+  while (document.readyState !== "complete") {
+    await unblock();
+  }
+  requestIdleCallback(resolve);
+}
+
+wandow.idle = function() {
+  return new Promise((resolve) => {
+    idleCheck(resolve);
   });
 }
