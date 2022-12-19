@@ -349,7 +349,7 @@ header[classZ*="style--slimline"]>div[class*="style--overlay"],
 div[class^="css-"],
 div[class*="WSJTheme--thumb-overlay"],
 div[class*="WSJTheme"],
-h3[class*="WSJTheme--headline"]
+[class*="WSJTheme--head"]
 {
    background: transparent !important;
    background-color: transparent !important;
