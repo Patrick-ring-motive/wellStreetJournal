@@ -1,3 +1,5 @@
+import './polyfill/idlecallback.js'
+
 var wandow = window || self || this;
 wandow.sleep = function(ms) {
   return new Promise((resolve) => {
