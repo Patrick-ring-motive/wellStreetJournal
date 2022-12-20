@@ -138,12 +138,14 @@ async function fixDomainLinks() {
 
   replaceLinkByQuery('[href^="www.wsj.com"],[href^="https://www.wsj.com"],[href^="http://www.wsj.com"]', 'www.wsj.com', cdomain, xxdomainxx);
 
-  replaceSrcByQuery('[src^="www.wsj.com"],[src^="https://www.wsj.com"],[src^="http://www.wsj.com"]', 'www.wsj.com', cdomain, xxdomainxx);
+  replaceSrcByQuery('[src^="www.wsj.com"]:not(img),[src^="https://www.wsj.com"]:not(img),[src^="http://www.wsj.com"]:not(img)', 'www.wsj.com', cdomain, xxdomainxx);
+
+  replaceSrcByQuery('img[src^="wsj.webserve.workers.dev"],img[src^="https://wsj.webserve.workers.dev"],img[src^="http://wsj.webserve.workers.dev"],img[src^="/"],img[src^="."]', 'wsj.webserve.workers.dev', 'www.wsj.com', xxdomainxx);
 
   if (xdomain) {
     replaceLinkByQuery('[href^="/"],[href^="./"],[href^="' + xdomain + '"],[href^="https://' + xdomain + '"],[href^="http://' + xdomain + '"]', xdomain, cdomain, xxdomainxx);
 
-    replaceSrcByQuery('[src^="/"],[src^="./"],[src^="https://' + xdomain + '"],[src^="http://' + xdomain + '"]', xdomain, cdomain, xxdomainxx);
+    replaceSrcByQuery('[src^="/"]:not(img),[src^="./"],[src^="https://' + xdomain + '"]:not(img),[src^="http://' + xdomain + '"]:not(img)', xdomain, cdomain, xxdomainxx);
   }
 
 
