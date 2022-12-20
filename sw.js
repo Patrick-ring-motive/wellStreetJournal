@@ -113,9 +113,7 @@ self.addEventListener('fetch', function(event) {
           return response || caches.match(request, looser).then(function(response) {
             return response || caches.match(request, loosest).then(function(response) {
               return response || fetch(request).then(function(response) {
-                if ((navigator.userAgent.indexOf('Safari') != -1) && (navigator.userAgent.indexOf('Chrome') == -1) && (request.headers.get('Content-Type').toLowerCase().indexOf('image') > -1)) {
-                  return response;// don't cache images on safari
-                }
+
                 // Save a copy of it in cache
                 let copy = response.clone();
                 event.waitUntil(caches.open('app').then(function(cache) {
