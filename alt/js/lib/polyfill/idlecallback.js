@@ -1,4 +1,3 @@
-
 var wandow = window || self || this;
 
 wandow.clearStub = function() { return; };
@@ -34,11 +33,13 @@ function doNow(fun) {
 
 }
 
+
+
 wandow.setImmediate = wandow.setImmediate || doNow;
 wandow.clearImmediate = wandow.clearImmediate || wandow.clearTimeout;
 
 wandow.requestAnimationFrame = wandow.requestAnimationFrame || wandow.mozRequestAnimationFrame ||
-  wandow.webkitRequestAnimationFrame || wandow.msRequestAnimationFrame
+wandow.webkitRequestAnimationFrame || wandow.msRequestAnimationFrame
 wandow.requestIdleCallback || wandow.setImmediate || wandow.queueMicrotask;
 
 wandow.mozRequestAnimationFrame = wandow.requestAnimationFrame;
@@ -53,7 +54,18 @@ wandow.webkitCancelAnimationFrame = wandow.cancelAnimationFrame;
 wandow.msCancelAnimationFrame = wandow.cancelAnimationFrame;
 wandow.oCancelAnimationFrame = wandow.cancelAnimationFrame;
 
-wandow.requestIdleCallback = wandow.requestIdleCallback || wandow.requestAnimationFrame;
+wandow.requestReadyCallback = function(callback){
+if(document.readyState){
+if(document.readyState=='loading'){return requestAnimationFrame(callback);}
+  if(document.readyState=='interactive'){return setTimeout(callback,1);}
+  if(document.readyState=='complete'){return setTimeout(callback,0);}
+}else{
+return requestAnimationFrame(callback);
+}
+  
+}
+
+wandow.requestIdleCallback = wandow.requestIdleCallback || wandow.requestReadyCallback;
 
 wandow.cancelIdleCallback = wandow.cancelIdleCallback || wandow.cancelAnimationFrame || wandow.clearTimeout || wandow.clearImmediate || wandow.clearStub;
 
@@ -77,7 +89,6 @@ For example, if you have a background task that updates data in a database, you 
 In general, it's important to carefully consider the requirements of the tasks you are scheduling, and to choose the appropriate function based on those requirements. This can help to ensure that your web application performs well and provides a smooth user experience.
 
 */
-
 
 
 
