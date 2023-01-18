@@ -1,6 +1,6 @@
 
 import '../sw/swRegister.js';
-import '../customAjax.js';
+//import '../customAjax.js';
 import '../wsjGoogleAnalytics.js';
 import '../dwsjGoogleAnalytics.js';
 import '../wsjFixLinks.js';
