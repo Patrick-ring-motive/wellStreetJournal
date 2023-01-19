@@ -1,5 +1,7 @@
 window.dev_null = async function() { };
-XMLHttpRequest.prototype.nativeOpen = XMLHttpRequest.prototype.open;
+if (!XMLHttpRequest.prototype.nativeOpen) {
+  XMLHttpRequest.prototype.nativeOpen = XMLHttpRequest.prototype.open;
+}
 
 XMLHttpRequest.prototype.customOpen = function(method, url, asynch, user, password) {
 
@@ -16,8 +18,9 @@ XMLHttpRequest.prototype.customOpen = function(method, url, asynch, user, passwo
 
 XMLHttpRequest.prototype.open = XMLHttpRequest.prototype.customOpen;
 
-
-XMLHttpRequest.prototype.nativeSend = XMLHttpRequest.prototype.send;
+if (!XMLHttpRequest.prototype.nativeSend) {
+  XMLHttpRequest.prototype.nativeSend = XMLHttpRequest.prototype.send;
+}
 
 XMLHttpRequest.prototype.customSend = function(body) {
 
@@ -33,9 +36,9 @@ XMLHttpRequest.prototype.send = XMLHttpRequest.prototype.customSend;
 
 
 
-
-XMLHttpRequest.prototype.nativeSetRequestHeader = XMLHttpRequest.prototype.setRequestHeader;
-
+if (!XMLHttpRequest.prototype.nativeSetRequestHeader) {
+  XMLHttpRequest.prototype.nativeSetRequestHeader = XMLHttpRequest.prototype.setRequestHeader;
+}
 
 XMLHttpRequest.prototype.customSetRequestHeader = function(header, value) {
 
@@ -67,7 +70,9 @@ XMLHttpRequest.prototype.customSetRequestHeader = function(header, value) {
 
 XMLHttpRequest.prototype.setRequestHeader = XMLHttpRequest.prototype.customSetRequestHeader;
 
-window.Response.nativeRedirect = window.Response.redirect;
+if (!window.Response.nativeRedirect) {
+  window.Response.nativeRedirect = window.Response.redirect;
+}
 
 window.Response.customRedirect = function(url, status) {
 
@@ -81,8 +86,9 @@ window.Response.customRedirect = function(url, status) {
 window.Response.redirect = window.Response.customRedirect;
 
 
-
-window.Response.nativeClone = window.Response.clone;
+if (!window.Response.nativeClone) {
+  window.Response.nativeClone = window.Response.clone;
+}
 
 window.Response.customClone = function() {
 
@@ -95,8 +101,9 @@ window.Response.customClone = function() {
 window.Response.clone = window.Response.customClone;
 
 
-
-window.Response.nativeError = window.Response.error;
+if (!window.Response.nativeError) {
+  window.Response.nativeError = window.Response.error;
+}
 
 window.Response.customError = function() {
 
@@ -108,8 +115,9 @@ window.Response.customError = function() {
 
 window.Response.error = window.Response.customError;
 
-
-window.Response.nativeText = window.Response.text;
+if (!window.Response.nativeText) {
+  window.Response.nativeText = window.Response.text;
+}
 
 window.Response.customText = async function() {
 
@@ -123,8 +131,9 @@ window.Response.text = window.Response.customText;
 
 
 
-
-window.Response.nativeJson = window.Response.json;
+if (!window.Response.nativeJson) {
+  window.Response.nativeJson = window.Response.json;
+}
 
 window.Response.customJson = async function() {
 
@@ -139,8 +148,9 @@ window.Response.json = window.Response.customJson;
 
 
 
-
-window.Response.nativeBlob = window.Response.blob;
+if (!window.Response.nativeBlob) {
+  window.Response.nativeBlob = window.Response.blob;
+}
 
 window.Response.customBlob = async function() {
 
@@ -153,8 +163,9 @@ window.Response.customBlob = async function() {
 window.Response.blob = window.Response.customBlob;
 
 
-
-window.Response.nativeFormData = window.Response.formData;
+if (!window.Response.nativeFormData) {
+  window.Response.nativeFormData = window.Response.formData;
+}
 
 window.Response.customFormData = async function() {
 
@@ -168,9 +179,9 @@ window.Response.formData = window.Response.customFormData;
 
 
 
-
-window.Response.nativeArrayBuffer = window.Response.arrayBuffer;
-
+if (!window.Response.nativeArrayBuffer) {
+  window.Response.nativeArrayBuffer = window.Response.arrayBuffer;
+}
 window.Response.customArrayBuffer = async function() {
 
   let bfr = await this.nativeArrayBuffer();
@@ -183,8 +194,9 @@ window.Response.arrayBuffer = window.Response.customArrayBuffer;
 
 
 
-
-window.Request.nativeClone = window.Request.clone;
+if (!window.Request.nativeClone) {
+  window.Request.nativeClone = window.Request.clone;
+}
 
 window.Request.customClone = function() {
 
@@ -197,8 +209,9 @@ window.Request.customClone = function() {
 window.Request.clone = window.Request.customClone;
 
 
-
-window.Request.nativeText = window.Request.text;
+if (!window.Request.nativeText) {
+  window.Request.nativeText = window.Request.text;
+}
 
 window.Request.customText = async function() {
 
@@ -212,8 +225,9 @@ window.Request.text = window.Request.customText;
 
 
 
-
-window.Request.nativeJson = window.Request.json;
+if (!window.Request.nativeJson) {
+  window.Request.nativeJson = window.Request.json;
+}
 
 window.Request.customJson = async function() {
 
@@ -228,8 +242,9 @@ window.Request.json = window.Request.customJson;
 
 
 
-
-window.Request.nativeBlob = window.Request.blob;
+if (!window.Request.nativeBlob) {
+  window.Request.nativeBlob = window.Request.blob;
+}
 
 window.Request.customBlob = async function() {
 
@@ -242,9 +257,9 @@ window.Request.customBlob = async function() {
 window.Request.blob = window.Request.customBlob;
 
 
-
-window.Request.nativeFormData = window.Request.formData;
-
+if (!window.Request.nativeFormData) {
+  window.Request.nativeFormData = window.Request.formData;
+}
 window.Request.customFormData = async function() {
 
   let dta = await this.nativeFormData();
@@ -257,8 +272,9 @@ window.Request.formData = window.Request.customFormData;
 
 
 
-
-window.Request.nativeArrayBuffer = window.Request.arrayBuffer;
+if (!window.Request.nativeArrayBuffer) {
+  window.Request.nativeArrayBuffer = window.Request.arrayBuffer;
+}
 
 window.Request.customArrayBuffer = async function() {
 
@@ -270,9 +286,9 @@ window.Request.customArrayBuffer = async function() {
 
 window.Request.arrayBuffer = window.Request.customArrayBuffer;
 
-
-window.nativeFetch = window.fetch;
-
+if (!window.nativeFetch) {
+  window.nativeFetch = window.fetch;
+}
 window.customFetch = async function(request, headers) {
 
   var req;

@@ -44,9 +44,10 @@ wandow.idle = function() {
 }
 
 wandow.delayWork = function() {
-  return 
-    Promise.all([requestIdleCallback(),
-    requestAnimationFrame()]);
+  return Promise.all([
+    new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
+    new Promise((resolve) => requestAnimationFrame(resolve))
+  ]);
   
 }
 
