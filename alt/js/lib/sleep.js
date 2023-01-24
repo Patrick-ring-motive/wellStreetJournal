@@ -15,19 +15,15 @@ wandow.block = function() {
 
 wandow.doWork = function() {
   return new Promise((resolve) => {
-    setTimeout(resolve, 0);
+    setTimeout(resolve,0);
   });
 }
 
 wandow.unblock = function() {
-  /* return Promise.race([
-     new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
-     new Promise((resolve) => requestAnimationFrame(resolve))
-   ]);*/
-
-  return async function() { return await sleep(100); }();
-  Promise.all([requestIdleCallback(),
-  requestAnimationFrame()]);
+  return Promise.race([
+    new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
+    new Promise((resolve) => requestAnimationFrame(resolve))
+  ]);
 }
 
 
@@ -52,7 +48,7 @@ wandow.delayWork = function() {
     new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
     new Promise((resolve) => requestAnimationFrame(resolve))
   ]);
-
+  
 }
 
 wandow.defer = async function() {

@@ -36,7 +36,7 @@ function loadLink(anchor) {
   l.rel = "prefetch";
   l.href = anchor.href;
   document.body.appendChild(l);
- /* if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+  if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
 
     let s = document.createElement('script');
     s.defer = 'defer';
@@ -44,7 +44,7 @@ function loadLink(anchor) {
     s.setAttribute('lazyLinkLoader', 'lazyLinkLoader');
     document.body.appendChild(s);
 
-  }*/
+  }
 
 
 

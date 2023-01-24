@@ -47,29 +47,30 @@ if((url.search.indexOf('wellStreetJournalAlt')>-1)||(url.pathname.toLowerCase().
 
         bdy=await res.text();
         bdy = bdy.replace('type="image/svg+xml" href="https://s.wsj.net/img/meta/wsj_favicon.svg"','type="image/png" href="https://raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/wsj/alt/ico/icons8-water-well-96.png"');
-        bdy = bdy.replace('https://www.wsj.com/favicon.ico','https://raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/wsj/alt/ico/favicon.ico');
-        bdy = bdy.replace("https://s.wsj.net/media/wsj_apple-touch-icon-180x180.png",'https://raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/wsj/alt/ico/icons8-water-well-96.png');
-        bdy = bdy.replaceAll("wsjstream.wsj.net","dev-null.webserve.workers.dev");
+        bdy = bdy.replace('https://www.wsj.com/favicon.ico','https://wellstreetjournal.pages.dev/alt/ico/favicon.ico');
+        bdy = bdy.replace("https://s.wsj.net/media/wsj_apple-touch-icon-180x180.png",'https://wellstreetjournal.pages.dev/alt/ico/icons8-water-well-96.png');
+      /*  bdy = bdy.replaceAll("wsjstream.wsj.net","dev-null.webserve.workers.dev");
         bdy = bdy.replaceAll("api.wsj.net","dev-null.webserve.workers.dev");
         bdy = bdy.replaceAll("accounts.wsj.com","dev-null.webserve.workers.dev");
         bdy = bdy.replaceAll("sso.accounts.dowjones.com","dev-null.webserve.workers.dev"); 
         bdy = bdy.replaceAll("cdn.privacy-mgmt.com","dev-null.webserve.workers.dev");  
         bdy = bdy.replaceAll("news.google.com","dev-null.webserve.workers.dev");  
         bdy = bdy.replaceAll("follow-api.wsj.com","dev-null.webserve.workers.dev");  
-bdy = bdy.replaceAll("wsj.webserve.workers.dev/static_html_files/bluegrass","dev-null.webserve.workers.dev");         
+        bdy = bdy.replaceAll("wsj.webserve.workers.dev/static_html_files/bluegrass","dev-null.webserve.workers.dev");     */    
+       
         bdy = bdy.replaceAll('content="wsj.com','content="wsj.webserve.workers.dev');
         bdy = bdy.replaceAll('WSJ online','Well Street Journal');
         bdy = bdy.replaceAll('Wall Street Journal','Well Street Journal');
         bdy = bdy.replaceAll('www.wsj.com','wsj.webserve.workers.dev');
         bdy = bdy.replaceAll('deloitte.wsj.com','dwsj.webserve.workers.dev');
-       // bdy = bdy.replaceAll('https://wsj.webserve.workers.dev/fonts/woffs/','https://raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/wsj/fonts/woffs/');
-       // bdy = bdy.replaceAll('"/fonts/woffs/','raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/wsj/fonts/woffs/');
-      //  bdy = bdy.replaceAll("'/fonts/woffs/",'raw.githubusercontent.com/Patrick-ring-motive/wellStreetJournal/wsj/fonts/woffs/');
-        bdy = bdy.replaceAll("<script async",'<script defer="defer" ');
-        bdy = bdy.replaceAll("<script ",'<script defer="defer" ');
-        const re = /(<script[^>]*wsj.webserve.workers.dev[^>]*)(text\/javascript)([^>]*>)/gi;
+        bdy = bdy.replaceAll('https://wsj.webserve.workers.dev/fonts/woffs/','https://wellstreetjournal.pages.dev/fonts/woffs/');
+        bdy = bdy.replaceAll('"/fonts/woffs/','"https://wellstreetjournal.pages.dev/fonts/woffs/');
+        bdy = bdy.replaceAll("'/fonts/woffs/","'https://wellstreetjournal.pages.dev/fonts/woffs/");
+       // bdy = bdy.replaceAll("<script async",'<script defer="defer" ');
+       // bdy = bdy.replaceAll("<script ",'<script defer="defer" ');
+        //const re = /(<script[^>]*wsj.webserve.workers.dev[^>]*)(text\/javascript)([^>]*>)/gi;
        // bdy = bdy.replaceAll(re,`$1text/partytown$3`);
-        let moatads = /(<script[^>]*moatads[^>]*>)/gi;
+      //  let moatads = /(<script[^>]*moatads[^>]*>)/gi;
        //bdy=bdy.replace(moatads,'<script type="text/ignore">');
        let  moatads2 = /(<link[^>]*moatads[^>]*>)/gi;
       // bdy=bdy.replace(moatads2,'');
@@ -79,7 +80,6 @@ bdy = bdy.replaceAll("wsj.webserve.workers.dev/static_html_files/bluegrass","dev
         <link rel="stylesheet" href="/alt/css/wellstreet.css?wellStreetJournalAlt">
         <script src="https://polyfill.io/v3/polyfill.js?features=es5,es6,es7&flags=gated">     
         </script>
-       <!-- <script src="/alt/js/customAjax.js?wellStreetJournalAlt"></script>-->
     `);
         bdy = bdy.replace('</body>','<script defer="defer"  src="/dist/allIndex.min.js?wellStreetJournalAlt" href="/dist/allIndex.min.js?wellStreetJournalAlt" xlink:href="/dist/allIndex.min.js?wellStreetJournalAlt"></script><a href="https://www.reddit.com/r/wellstreetjournal">​</a></body>');
         }
