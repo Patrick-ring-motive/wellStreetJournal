@@ -132,7 +132,7 @@ async function fixDomainLinks() {
   cdomain =  'wsq.webserve.workers.dev';
   }
 
-  if(document.domain.search('webserve.workers.dev')==-1){
+/*  if(document.domain.search('webserve.workers.dev')==-1){
 
 cdomain = document.domain;
 
@@ -140,7 +140,7 @@ cdomain = document.domain;
 
   replaceSrcByQuery('[src^="wsj.webserve.workers.dev"]:not(img),[src^="https://wsj.webserve.workers.dev"]:not(img),[src^="http://wsj.webserve.workers.dev"]:not(img)', 'wsj.webserve.workers.dev', cdomain, xxdomainxx);
   }
-
+*/
 
   replaceLinkByQuery('[href^="www.wsj.com"],[href^="https://www.wsj.com"],[href^="http://www.wsj.com"]', 'www.wsj.com', cdomain, xxdomainxx);
 
