@@ -3,7 +3,7 @@
 import './lib/sleep.js';
 
 
-async function main() {
+void async function main() {
 
   document.getElementsByTagName('html')[0].setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
 
@@ -60,9 +60,7 @@ async function main() {
 
   }, 100);
 
-}
-
-main();
+}();
 //////start funcs///
 async function forceLink(link_element, URL) {
 
