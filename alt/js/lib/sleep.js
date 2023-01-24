@@ -20,10 +20,14 @@ wandow.doWork = function() {
 }
 
 wandow.unblock = function() {
-  return Promise.race([
+ /* return Promise.race([
     new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
     new Promise((resolve) => requestAnimationFrame(resolve))
-  ]);
+  ]);*/
+
+    return 
+    Promise.all([requestIdleCallback(),
+    requestAnimationFrame()]);
 }
 
 
