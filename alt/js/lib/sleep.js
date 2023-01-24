@@ -25,7 +25,7 @@ wandow.unblock = function() {
      new Promise((resolve) => requestAnimationFrame(resolve))
    ]);*/
 
-  return async function(){return await sleep(10);};
+  return async function() { return await sleep(100); }();
   Promise.all([requestIdleCallback(),
   requestAnimationFrame()]);
 }
