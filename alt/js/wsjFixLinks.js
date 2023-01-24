@@ -3,7 +3,7 @@
 import './lib/sleep.js';
 
 
-void async function main() {
+async function main() {
 
   document.getElementsByTagName('html')[0].setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
 
@@ -60,7 +60,9 @@ void async function main() {
 
   }, 100);
 
-}();
+}
+
+main();
 //////start funcs///
 async function forceLink(link_element, URL) {
 
@@ -129,24 +131,16 @@ async function fixDomainLinks() {
 
   let cdomain = 'wsj.webserve.workers.dev';
   if (document.domain == 'wsq.webserve.workers.dev') {
-  cdomain =  'wsq.webserve.workers.dev';
+    'wsq.webserve.workers.dev';
   }
 
-/*  if(document.domain.search('webserve.workers.dev')==-1){
 
-cdomain = document.domain;
-
-      replaceLinkByQuery('[href^="wsj.webserve.workers.dev"],[href^="https://wsj.webserve.workers.dev"],[href^="http://wsj.webserve.workers.dev"]', 'wsj.webserve.workers.dev', cdomain, xxdomainxx);
-
-  replaceSrcByQuery('[src^="wsj.webserve.workers.dev"]:not(img),[src^="https://wsj.webserve.workers.dev"]:not(img),[src^="http://wsj.webserve.workers.dev"]:not(img)', 'wsj.webserve.workers.dev', cdomain, xxdomainxx);
-  }
-*/
 
   replaceLinkByQuery('[href^="www.wsj.com"],[href^="https://www.wsj.com"],[href^="http://www.wsj.com"]', 'www.wsj.com', cdomain, xxdomainxx);
 
   replaceSrcByQuery('[src^="www.wsj.com"]:not(img),[src^="https://www.wsj.com"]:not(img),[src^="http://www.wsj.com"]:not(img)', 'www.wsj.com', cdomain, xxdomainxx);
 
-  replaceSrcByQuery('img[src^="wsj.webserve.workers.dev"],img[src^="https://wsj.webserve.workers.dev"],img[src^="http://wsj.webserve.workers.dev"],img[src^="/"],img[src^="."]', cdomain, 'www.wsj.com', xxdomainxx);
+  replaceSrcByQuery('img[src^="wsj.webserve.workers.dev"],img[src^="https://wsj.webserve.workers.dev"],img[src^="http://wsj.webserve.workers.dev"],img[src^="/"],img[src^="."]', 'wsj.webserve.workers.dev', 'www.wsj.com', xxdomainxx);
 
   if (xdomain) {
     replaceLinkByQuery('[href^="/"],[href^="./"],[href^="' + xdomain + '"],[href^="https://' + xdomain + '"],[href^="http://' + xdomain + '"]', xdomain, cdomain, xxdomainxx);
