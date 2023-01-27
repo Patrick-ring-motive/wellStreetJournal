@@ -1,35 +1,53 @@
-import './polyfill/idlecallback.js'
+import './polyfill/idlecallback.js';
 
-var wandow = window || self || this;
-wandow.sleep = function(ms) {
+var globalObject = window || self || global || globalThis || frames || this;
+globalObject.globalObject = globalObject;
+
+globalObject.sleep = function(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
 
-wandow.block = function() {
+
+globalObject.block = function() {
   return new Promise((resolve) => {
     queueMicroTask(resolve);
   });
 }
 
-wandow.doWork = function() {
+globalObject.doWork = function() {
   return new Promise((resolve) => {
     setTimeout(resolve,0);
   });
 }
 
-wandow.unblock = function() {
+globalObject.taskRace = function() {
+  if('scheduler' in globalObject){
+  return scheduler.postTask(function(){return '';}, { priority: 'user-visible' });
+  }
+}
+
+globalObject.taskAll = function() {
+  if('scheduler' in globalObject){
+  return scheduler.postTask(function(){return '';}, { priority: 'background' });
+  }else{
+  return '';
+  }
+}
+
+globalObject.unblock = function() {
   return Promise.race([
     new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
-    new Promise((resolve) => requestAnimationFrame(resolve))
+    new Promise((resolve) => requestAnimationFrame(resolve)),
+    taskRace()
   ]);
 }
 
 
 
 
-wandow.idleCheck = async function(resolve) {
+globalObject.idleCheck = async function(resolve) {
 
   while (document.readyState !== "complete") {
     await unblock();
@@ -37,29 +55,54 @@ wandow.idleCheck = async function(resolve) {
   requestIdleCallback(resolve);
 }
 
-wandow.idle = function() {
+globalObject.idle = function() {
   return new Promise((resolve) => {
     idleCheck(resolve);
   });
 }
 
-wandow.delayWork = function() {
-  return Promise.all([
-    new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
-    new Promise((resolve) => requestAnimationFrame(resolve))
+globalObject.delayWork = function() {
+return Promise.race([
+    new Promise((resolve) => requestIdleCallback(resolve)),
+    new Promise((resolve) => requestAnimationFrame(resolve)),
+    new Promise((resolve) => setTimeout(resolve,100)),
+    taskAll()
   ]);
   
 }
 
-wandow.defer = async function() {
+globalObject.defer = async function() {
 
   while (document.readyState !== "complete") {
-    await unblock();
+    await delayWork();
   }
   return delayWork();
 }
 
+globalObject.threadPriority = function(level){
 
+switch (level) {
+  case 1:
+  case 'critical':
+    return;
+  case 2:
+  case 'very high':
+    return globalObject.block();
+  case 3:
+  case 'high':
+    return globalObject.doWork();
+  default:
+  case 4:
+  case 'medium':
+    return globalObject.unblock();
+  case 5:
+  case 'low':
+    return globalObject.idle();
+  case 6:
+  case 'very low':
+    return globalObject.defer();
+}
+}
 
 /*
   The sleep function uses the setTimeout function to delay the execution of a function for a specified number of milliseconds. The unblock function uses the requestIdleCallback and requestAnimationFrame functions to schedule a callback to be executed during a period of idle time or at the next animation frame. The idleCheck function uses the unblock function to pause execution until the page has finished loading, and the idle function combines these functions to create a promise that resolves when the page has finished loading.
