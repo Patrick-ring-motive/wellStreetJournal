@@ -148,8 +148,8 @@ cdomain = document.domain;
 
   replaceSrcByQuery('[src^="www.wsj.com"]:not(img),[src^="https://www.wsj.com"]:not(img),[src^="http://www.wsj.com"]:not(img)', 'www.wsj.com', cdomain, xxdomainxx);
 
-  replaceSrcByQuery('img[src^="wsj.webserve.workers.dev"],img[src^="https://wsj.webserve.workers.dev"],img[src^="http://wsj.webserve.workers.dev"],img[src^="/"],img[src^="."]', cdomain, 'www.wsj.com', xxdomainxx);
-
+  /*replaceSrcByQuery('img[src^="wsj.webserve.workers.dev"],img[src^="https://wsj.webserve.workers.dev"],img[src^="http://wsj.webserve.workers.dev"],img[src^="/"],img[src^="."]', cdomain, 'www.wsj.com', xxdomainxx);
+*/
   if (xdomain) {
     replaceLinkByQuery('[href^="/"],[href^="./"],[href^="' + xdomain + '"],[href^="https://' + xdomain + '"],[href^="http://' + xdomain + '"]', xdomain, cdomain, xxdomainxx);
 

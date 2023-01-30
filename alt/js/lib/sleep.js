@@ -62,7 +62,7 @@ globalObject.idle = function() {
 }
 
 globalObject.delayWork = function() {
-return Promise.race([
+return Promise.all([
     new Promise((resolve) => requestIdleCallback(resolve)),
     new Promise((resolve) => requestAnimationFrame(resolve)),
     new Promise((resolve) => setTimeout(resolve,100)),
