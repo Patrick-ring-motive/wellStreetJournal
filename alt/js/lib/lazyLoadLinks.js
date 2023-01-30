@@ -2,15 +2,14 @@ import './sleep.js';
 
 
 
-async function main(){
+void async function main(){
 
   setInterval(async function() {
-    await idle();
+    await unblock();
     lazyLoadLinks(); 
   }, 2505);
 
-}
-main();
+}();
 
 
 

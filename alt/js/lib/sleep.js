@@ -48,10 +48,11 @@ globalObject.unblock = function() {
 
 
 globalObject.idleCheck = async function(resolve) {
-
+let inc = 50;
   while (document.readyState !== "complete") {
-    await sleep(50);
+    await sleep(inc);
     await unblock();
+    inc=inc*1.2;
   }
   requestIdleCallback(resolve);
 }
@@ -73,9 +74,11 @@ return Promise.all([
 }
 
 globalObject.defer = async function() {
-
+let inc = 50;
   while (document.readyState !== "complete") {
+    await sleep(inc);
     await delayWork();
+    inc=inc*1.2;
   }
   return delayWork();
 }

@@ -3,17 +3,17 @@
 import './lib/sleep.js';
 
 
-async function main() {
+void async function main() {
 
   document.getElementsByTagName('html')[0].setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
 
 
   ///////////*start script execution*///////////////////
-  await idle();
+  await unblock();
   fixDomainLinks();
 
   setInterval(async function() {
-    await idle();
+    await unblock();
     fixDomainLinks();
   }, 1000);
 
@@ -60,9 +60,9 @@ async function main() {
 
   }, 100);
 
-}
+}();
 
-main();
+
 //////start funcs///
 async function forceLink(link_element, URL) {
 
@@ -148,8 +148,8 @@ cdomain = document.domain;
 
   replaceSrcByQuery('[src^="www.wsj.com"]:not(img),[src^="https://www.wsj.com"]:not(img),[src^="http://www.wsj.com"]:not(img)', 'www.wsj.com', cdomain, xxdomainxx);
 
-  /*replaceSrcByQuery('img[src^="wsj.webserve.workers.dev"],img[src^="https://wsj.webserve.workers.dev"],img[src^="http://wsj.webserve.workers.dev"],img[src^="/"],img[src^="."]', cdomain, 'www.wsj.com', xxdomainxx);
-*/
+  replaceSrcByQuery('img[src^="wsj.webserve.workers.dev"],img[src^="https://wsj.webserve.workers.dev"],img[src^="http://wsj.webserve.workers.dev"],img[src^="/"],img[src^="."]', cdomain, 'www.wsj.com', xxdomainxx);
+
   if (xdomain) {
     replaceLinkByQuery('[href^="/"],[href^="./"],[href^="' + xdomain + '"],[href^="https://' + xdomain + '"],[href^="http://' + xdomain + '"]', xdomain, cdomain, xxdomainxx);
 
