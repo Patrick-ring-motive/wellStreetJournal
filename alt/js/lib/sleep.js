@@ -50,6 +50,7 @@ globalObject.unblock = function() {
 globalObject.idleCheck = async function(resolve) {
 
   while (document.readyState !== "complete") {
+    await sleep(50);
     await unblock();
   }
   requestIdleCallback(resolve);
