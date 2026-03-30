@@ -1,23 +1,17 @@
 import './sleep.js';
 
-
-
-void async function main(){
+void async function main() {
 
   setInterval(async function() {
     await unblock();
-    lazyLoadLinks(); 
+    lazyLoadLinks();
   }, 2505);
 
 }();
 
-
-
 function hasVisibleText(elm) {
 
-
   return !!elm.innerText.trim().length;
-
 
 }
 
@@ -27,9 +21,7 @@ function checkVisible(elm) {
   return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 }
 
-
 function loadLink(anchor) {
-
 
   let l = document.createElement('link');
   l.rel = "prefetch";
@@ -45,12 +37,7 @@ function loadLink(anchor) {
 
   }
 
-
-
   anchor.setAttribute('lazyLoaded', 'lazyLoaded');
-
-
-
 
 }
 
@@ -65,7 +52,9 @@ function lazyLoadLinks() {
         loadLink(la);
         return;
       }
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
 
   const links = document.querySelectorAll('a:not([lazyLoaded])');
@@ -77,11 +66,9 @@ function lazyLoadLinks() {
         loadLink(la);
         return;
       }
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
 
-
-
 }
-
-

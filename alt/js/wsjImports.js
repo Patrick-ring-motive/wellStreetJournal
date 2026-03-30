@@ -10,7 +10,9 @@ setTimeout(async function() {
 
       wsjImportScript(URLs[i]);
 
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
 
 });
@@ -29,9 +31,5 @@ async function wsjImportScript(URL) {
   script_element.setAttribute('xlink:href', URL);
   return document.body.appendChild(script_element);
 }
-
-
-
-
 
 /* ]]>/* */

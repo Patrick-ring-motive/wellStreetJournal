@@ -9,7 +9,6 @@ globalObject.sleep = function(ms) {
   });
 }
 
-
 globalObject.block = function() {
   return new Promise((resolve) => {
     queueMicroTask(resolve);
@@ -18,41 +17,48 @@ globalObject.block = function() {
 
 globalObject.doWork = function() {
   return new Promise((resolve) => {
-    setTimeout(resolve,0);
+    setTimeout(resolve, 0);
   });
 }
 
 globalObject.taskRace = function() {
-  if('scheduler' in globalObject){
-  return scheduler.postTask(function(){return '';}, { priority: 'user-visible' });
+  if ('scheduler' in globalObject) {
+    return scheduler.postTask(function() {
+      return '';
+    }, {
+      priority: 'user-visible'
+    });
   }
 }
 
 globalObject.taskAll = function() {
-  if('scheduler' in globalObject){
-  return scheduler.postTask(function(){return '';}, { priority: 'background' });
-  }else{
-  return '';
+  if ('scheduler' in globalObject) {
+    return scheduler.postTask(function() {
+      return '';
+    }, {
+      priority: 'background'
+    });
+  } else {
+    return '';
   }
 }
 
 globalObject.unblock = function() {
   return Promise.race([
-    new Promise((resolve) => requestIdleCallback(resolve, { timeout: 100 })),
+    new Promise((resolve) => requestIdleCallback(resolve, {
+      timeout: 100
+    })),
     new Promise((resolve) => requestAnimationFrame(resolve)),
     taskRace()
   ]);
 }
 
-
-
-
 globalObject.idleCheck = async function(resolve) {
-let inc = 50;
+  let inc = 50;
   while (document.readyState !== "complete") {
     await sleep(inc);
     await unblock();
-    inc=inc*1.2;
+    inc = inc * 1.2;
   }
   requestIdleCallback(resolve);
 }
@@ -64,48 +70,48 @@ globalObject.idle = function() {
 }
 
 globalObject.delayWork = function() {
-return Promise.all([
+  return Promise.all([
     new Promise((resolve) => requestIdleCallback(resolve)),
     new Promise((resolve) => requestAnimationFrame(resolve)),
-    new Promise((resolve) => setTimeout(resolve,100)),
+    new Promise((resolve) => setTimeout(resolve, 100)),
     taskAll()
   ]);
-  
+
 }
 
 globalObject.defer = async function() {
-let inc = 50;
+  let inc = 50;
   while (document.readyState !== "complete") {
     await sleep(inc);
     await delayWork();
-    inc=inc*1.2;
+    inc = inc * 1.2;
   }
   return delayWork();
 }
 
-globalObject.threadPriority = function(level){
+globalObject.threadPriority = function(level) {
 
-switch (level) {
-  case 1:
-  case 'critical':
-    return;
-  case 2:
-  case 'very high':
-    return globalObject.block();
-  case 3:
-  case 'high':
-    return globalObject.doWork();
-  default:
-  case 4:
-  case 'medium':
-    return globalObject.unblock();
-  case 5:
-  case 'low':
-    return globalObject.idle();
-  case 6:
-  case 'very low':
-    return globalObject.defer();
-}
+  switch (level) {
+    case 1:
+    case 'critical':
+      return;
+    case 2:
+    case 'very high':
+      return globalObject.block();
+    case 3:
+    case 'high':
+      return globalObject.doWork();
+    default:
+    case 4:
+    case 'medium':
+      return globalObject.unblock();
+    case 5:
+    case 'low':
+      return globalObject.idle();
+    case 6:
+    case 'very low':
+      return globalObject.defer();
+  }
 }
 
 /*

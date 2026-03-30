@@ -1,9 +1,22 @@
 // Core assets
-const loose = { ignoreVary: true, ignoreMethod: false, ignoreSearch: false };
-const looser = { ignoreVary: true, ignoreMethod: true, ignoreSearch: false };
-const loosest = { ignoreVary: true, ignoreMethod: true, ignoreSearch: true };
+const loose = {
+  ignoreVary: true,
+  ignoreMethod: false,
+  ignoreSearch: false
+};
+const looser = {
+  ignoreVary: true,
+  ignoreMethod: true,
+  ignoreSearch: false
+};
+const loosest = {
+  ignoreVary: true,
+  ignoreMethod: true,
+  ignoreSearch: true
+};
 let coreAssets = [];
 const endings = ['.js', '.jsx', '.ts', '.tsx', '.css', '.scss', '.json', '.jpg', '.png', '.gif', '.webp', '.svg', '.ico', '.woff', '.woff2'];
+
 function checkEndings(fileURL) {
   for (let i = 0; i < endings.length; i++) {
 
@@ -34,7 +47,6 @@ self.addEventListener('activate', event => {
 
 */
 
-
 // On install, cache core assets
 self.addEventListener('install', function(event) {
 
@@ -60,9 +72,6 @@ self.addEventListener('fetch', function(event) {
   if (!request.url.startsWith(self.location.origin)) return;
   if (request.url.indexOf('GoogleAnalytics') > -1) return;
 
-
-
-
   //Articles
   //Offline-first
   //ignore content-type
@@ -87,7 +96,6 @@ self.addEventListener('fetch', function(event) {
                     statusText: copy.statusText,
                     headers: newHeaders
                   });
-
 
                   return cache.put(request, anotherResponse);
                 }));
@@ -131,7 +139,6 @@ self.addEventListener('fetch', function(event) {
     return;
   }
 
-
   // HTML files
   // Network-first
   if (request.headers.get('Accept').indexOf('html') > -1) {
@@ -164,6 +171,5 @@ self.addEventListener('fetch', function(event) {
       })
     );
   }
-
 
 });

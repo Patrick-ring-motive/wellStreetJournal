@@ -1,7 +1,8 @@
 var wandow = window || self || this;
 
-wandow.clearStub = function() { return; };
-
+wandow.clearStub = function() {
+  return;
+};
 
 /*
 This function is designed to execute a provided function as soon as possible, depending on the environment it is running in. It checks for the presence of the setTimeout and queueMicrotask functions, which are commonly used to schedule a function to be executed at a later time. If either of those functions is available, the provided function is passed to it with a 10ms delay. Otherwise, the function is executed immediately.
@@ -18,8 +19,6 @@ function doSoon(fun) {
 
 }
 
-
-
 /*
 This function is similar to the previous one, but it schedules the provided function to be executed with a delay of 0ms. This means that the function will be executed as soon as possible, but it may not be executed immediately if the JavaScript runtime is currently busy with other tasks. If the setTimeout function is not available, the provided function is executed immediately.
 */
@@ -33,13 +32,11 @@ function doNow(fun) {
 
 }
 
-
-
 wandow.setImmediate = wandow.setImmediate || doNow;
 wandow.clearImmediate = wandow.clearImmediate || wandow.clearTimeout;
 
 wandow.requestAnimationFrame = wandow.requestAnimationFrame || wandow.mozRequestAnimationFrame ||
-wandow.webkitRequestAnimationFrame || wandow.msRequestAnimationFrame
+  wandow.webkitRequestAnimationFrame || wandow.msRequestAnimationFrame
 wandow.requestIdleCallback || wandow.setImmediate || wandow.queueMicrotask;
 
 wandow.mozRequestAnimationFrame = wandow.requestAnimationFrame;
@@ -54,25 +51,29 @@ wandow.webkitCancelAnimationFrame = wandow.cancelAnimationFrame;
 wandow.msCancelAnimationFrame = wandow.cancelAnimationFrame;
 wandow.oCancelAnimationFrame = wandow.cancelAnimationFrame;
 
-wandow.requestReadyCallback = function(callback){
-if(document.readyState){
-if(document.readyState=='loading'){return requestAnimationFrame(callback);}
-  if(document.readyState=='interactive'){return setTimeout(callback,1);}
-  if(document.readyState=='complete'){return setTimeout(callback,0);}
-}else{
-return requestAnimationFrame(callback);
-}
-  
+wandow.requestReadyCallback = function(callback) {
+  if (document.readyState) {
+    if (document.readyState == 'loading') {
+      return requestAnimationFrame(callback);
+    }
+    if (document.readyState == 'interactive') {
+      return setTimeout(callback, 1);
+    }
+    if (document.readyState == 'complete') {
+      return setTimeout(callback, 0);
+    }
+  } else {
+    return requestAnimationFrame(callback);
+  }
+
 }
 
 wandow.requestIdleCallback = wandow.requestIdleCallback || wandow.requestReadyCallback;
 
 wandow.cancelIdleCallback = wandow.cancelIdleCallback || wandow.cancelAnimationFrame || wandow.clearTimeout || wandow.clearImmediate || wandow.clearStub;
 
-
 wandow.queueMicrotask = wandow.queueMicrotask || doNow;
 wandow.nextTick = wandow.nextTick || wandow.queueMicrotask || wandow.requestIdleCallback || wandow.setImmediate;
-
 
 /*
 
@@ -89,17 +90,3 @@ For example, if you have a background task that updates data in a database, you 
 In general, it's important to carefully consider the requirements of the tasks you are scheduling, and to choose the appropriate function based on those requirements. This can help to ensure that your web application performs well and provides a smooth user experience.
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-

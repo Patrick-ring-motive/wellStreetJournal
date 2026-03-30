@@ -2,11 +2,9 @@
 
 import './lib/sleep.js';
 
-
 void async function main() {
 
   document.getElementsByTagName('html')[0].setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
-
 
   ///////////*start script execution*///////////////////
   await unblock();
@@ -40,9 +38,10 @@ void async function main() {
           spans[i].innerText = '';
         }
 
-      } catch (e) { continue; }
+      } catch (e) {
+        continue;
+      }
     }
-
 
     let wsj = document.querySelectorAll('a[title="WSJ.COM"]');
     const wsj_length = wsj.length;
@@ -53,15 +52,14 @@ void async function main() {
         wsj[i].innerText = 'WELL STREET HOME';
         wsj[i].title = 'Wellstreet';
 
-      } catch (e) { continue; }
+      } catch (e) {
+        continue;
+      }
     }
-
-
 
   }, 100);
 
 }();
-
 
 //////start funcs///
 async function forceLink(link_element, URL) {
@@ -76,7 +74,6 @@ async function forceLink(link_element, URL) {
 
 }
 
-
 async function replaceLinkByQuery(qwry, xdom, cdom, xxdomxx) {
 
   let lnks = document.querySelectorAll(qwry);
@@ -85,10 +82,10 @@ async function replaceLinkByQuery(qwry, xdom, cdom, xxdomxx) {
     try {
       let newLink = lnks[i].href.replace(xdom, cdom) + xxdomxx;
       forceLink(lnks[i], newLink);
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
-
-
 
 }
 
@@ -100,16 +97,14 @@ async function replaceSrcByQuery(qwry, xdom, cdom, xxdomxx) {
     try {
       let newLink = lnks[i].src.replace(xdom, cdom) + xxdomxx;
       forceLink(lnks[i], newLink);
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
-
-
 
 }
 
-
 async function fixDomainLinks() {
-
 
   const dlnks = document.querySelectorAll('a[href*="deloitte.wsj.com"]');
   const dlnks_length = dlnks.length;
@@ -118,7 +113,9 @@ async function fixDomainLinks() {
 
       dlnks[i].href = dlnks[i].href.replace('deloitte.wsj.com', 'dwsj.webserve.workers.dev');
 
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
 
   let xdomain = window.location.href.split('xxdomainxx')[1];
@@ -131,18 +128,17 @@ async function fixDomainLinks() {
 
   let cdomain = 'wsj.webserve.workers.dev';
   if (document.domain == 'wsq.webserve.workers.dev') {
-  cdomain =  'wsq.webserve.workers.dev';
+    cdomain = 'wsq.webserve.workers.dev';
   }
 
-  if(document.domain.search('webserve.workers.dev')==-1){
+  if (document.domain.search('webserve.workers.dev') == -1) {
 
-cdomain = document.domain;
+    cdomain = document.domain;
 
-      replaceLinkByQuery('[href^="wsj.webserve.workers.dev"],[href^="https://wsj.webserve.workers.dev"],[href^="http://wsj.webserve.workers.dev"]', 'wsj.webserve.workers.dev', cdomain, xxdomainxx);
+    replaceLinkByQuery('[href^="wsj.webserve.workers.dev"],[href^="https://wsj.webserve.workers.dev"],[href^="http://wsj.webserve.workers.dev"]', 'wsj.webserve.workers.dev', cdomain, xxdomainxx);
 
-  replaceSrcByQuery('[src^="wsj.webserve.workers.dev"]:not(img),[src^="https://wsj.webserve.workers.dev"]:not(img),[src^="http://wsj.webserve.workers.dev"]:not(img)', 'wsj.webserve.workers.dev', cdomain, xxdomainxx);
+    replaceSrcByQuery('[src^="wsj.webserve.workers.dev"]:not(img),[src^="https://wsj.webserve.workers.dev"]:not(img),[src^="http://wsj.webserve.workers.dev"]:not(img)', 'wsj.webserve.workers.dev', cdomain, xxdomainxx);
   }
-
 
   replaceLinkByQuery('[href^="www.wsj.com"],[href^="https://www.wsj.com"],[href^="http://www.wsj.com"]', 'www.wsj.com', cdomain, xxdomainxx);
 
@@ -156,9 +152,6 @@ cdomain = document.domain;
     replaceSrcByQuery('[src^="/"]:not(img),[src^="./"],[src^="https://' + xdomain + '"]:not(img),[src^="http://' + xdomain + '"]:not(img)', xdomain, cdomain, xxdomainxx);
   }
 
-
-
 }
-
 
 /* ]]>/* */

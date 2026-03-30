@@ -2,13 +2,18 @@
 
 import './lib/sleep.js';
 
-
 async function main() {
 
   fixScriptTags();
   fixStyleTags();
-  setInterval(async function() { await idle(); fixScriptTags(); }, 1002);
-  setInterval(async function() { await idle(); fixStyleTags(); }, 1003);
+  setInterval(async function() {
+    await idle();
+    fixScriptTags();
+  }, 1002);
+  setInterval(async function() {
+    await idle();
+    fixStyleTags();
+  }, 1003);
 
 }
 main();
@@ -21,10 +26,11 @@ function copyAttributes(source, target) {
 
       target.setAttribute(source_attributes[i].nodeName, source_attributes[i].nodeValue);
 
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
 }
-
 
 function replaceEscapes(str) {
 
@@ -45,7 +51,6 @@ function recreateScript(elem, str) {
 
 }
 
-
 function recreateStyle(elem, str) {
 
   let new_style = document.createElement('style');
@@ -58,7 +63,6 @@ function recreateStyle(elem, str) {
   style_parent.appendChild(new_style);
 
 }
-
 
 async function fixScriptTags() {
 
@@ -75,7 +79,9 @@ async function fixScriptTags() {
         let script_rewrite = replaceEscapes(script_content);
 
         if (old_script.length > script_rewrite.length) {
-          if (script_rewrite.indexOf('/* <![CDATA[/* */') == -1) { script_rewrite = '/* <![CDATA[/* */' + script_rewrite + '/* ]]>/* */'; }
+          if (script_rewrite.indexOf('/* <![CDATA[/* */') == -1) {
+            script_rewrite = '/* <![CDATA[/* */' + script_rewrite + '/* ]]>/* */';
+          }
           recreateScript(scripts[i], script_rewrite);
 
         }
@@ -86,10 +92,7 @@ async function fixScriptTags() {
     }
   }
 
-
-
 }
-
 
 async function fixStyleTags() {
 
@@ -104,18 +107,18 @@ async function fixStyleTags() {
 
         let style_rewrite = replaceEscapes(style_content);
         if (old_style.length > style_rewrite.length) {
-          if (style_rewrite.indexOf('/* <![CDATA[/* */') == -1) { style_rewrite = '/* <![CDATA[/* */' + style_rewrite + '/* ]]>/* */'; }
+          if (style_rewrite.indexOf('/* <![CDATA[/* */') == -1) {
+            style_rewrite = '/* <![CDATA[/* */' + style_rewrite + '/* ]]>/* */';
+          }
           recreateStyle(styles[i], style_rewrite);
 
         }
       }
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
 
-
-
 }
-
-
 
 /* ]]>/* */
