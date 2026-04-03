@@ -2,7 +2,7 @@
 
 :root {
   --grey-baseline: #888888;
-  --off-blue: #8888BB; 
+  --off-blue: #8888BB;
   --top-cyan: #99DDFF;
   --neon-blue: #0274B6;
   --back-blue: #DDEEFF;
@@ -10,32 +10,28 @@
 
 }
 
+* {
 
-*
-{
-
- font-weight: 40;
- color:var(--grey-baseline);  
+  font-weight: 40;
+  color: var(--grey-baseline);
   text-shadow:
- -0.01em -0.01em 0 var(--neon-blue),
-  0.01em -0.01em 0 var(--neon-blue),
- -0.01em  0.01em 0 var(--neon-blue),
-  0.01em  0.01em 0 var(--neon-blue);
- /* -webkit-text-stroke-width: 0.2px;
+    -0.01em -0.01em 0 var(--neon-blue),
+    0.01em -0.01em 0 var(--neon-blue),
+    -0.01em 0.01em 0 var(--neon-blue),
+    0.01em 0.01em 0 var(--neon-blue);
+  /* -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: var(--off-blue);
   text-stroke-width: 0.2px;
   text-stroke-color: var(--off-blue);*/
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-[class*="WSJTheme--headlineText"]
-{
-   text-shadow:
- -0.01em -0.01em 0 var(--back-blue),
-  0.01em -0.01em 0 var(--back-blue),
- -0.01em  0.01em 0 var(--back-blue),
-  0.01em  0.01em 0 var(--back-blue) !important;
+[class*="WSJTheme--headlineText"] {
+  text-shadow:
+    -0.01em -0.01em 0 var(--back-blue),
+    0.01em -0.01em 0 var(--back-blue),
+    -0.01em 0.01em 0 var(--back-blue),
+    0.01em 0.01em 0 var(--back-blue) !important;
   -webkit-text-stroke-width: 0.2px !important;
   -webkit-text-stroke-color: var(--back-blue) !important;
   text-stroke-width: 0.2px !important;
@@ -43,20 +39,19 @@
 }
 
 div[class*="videoThumb"],
-div[class*="vidThumb"]
-{
-  color:white;  
-   text-shadow:
- -0.01em -0.01em 0 black,
-  0.01em -0.01em 0 black,
- -0.01em  0.01em 0 black,
-  0.01em  0.01em 0 black;
+div[class*="vidThumb"] {
+  color: white;
+  text-shadow:
+    -0.01em -0.01em 0 black,
+    0.01em -0.01em 0 black,
+    -0.01em 0.01em 0 black,
+    0.01em 0.01em 0 black;
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: var(--back-blue);
   text-stroke-width: 0.2px;
   text-stroke-color: var(--back-blue);
-      font-family: 'Retina';
-    font-weight: bolder;
+  font-family: 'Retina';
+  font-weight: bolder;
 }
 
 p,
@@ -64,15 +59,14 @@ p[data-type="paragraph"],
 p[class*="WSJProTheme--summary"]>span,
 div.wsj-snippet-body>p,
 a[class*="style--subsection-link"],
-[class*="WSJTheme"]{
+[class*="WSJTheme"] {
 
-   color:var(--off-blue);
+  color: var(--off-blue);
   text-stroke-width: 0px;
   -webkit-text-stroke-width: 0px;
-  text-shadow:none;
+  text-shadow: none;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 h3[class*="style--sections-title"],
 span[class*="WSJTheme--listen-to-foe"],
@@ -82,21 +76,16 @@ p[class*="WSJTheme--summary"],
 span[class*="headlineText"],
 a[class*="SubSectionLink"],
 a[class*="style--subsection-link"],
-h3[class*="SectionsTitle"]
-{
-color: var(--off-blue) !important;
+h3[class*="SectionsTitle"] {
+  color: var(--off-blue) !important;
 }
-
 
 a[class*="style--burger-sections-link"],
-h2[class*="WSJTheme--hover-silver-gray"]
-{
-  
+h2[class*="WSJTheme--hover-silver-gray"] {
+
   color: var(--grey-baseline);
-  
+
 }
-
-
 
 aside,
 div[aria-label="Conversation"],
@@ -187,31 +176,29 @@ ufc-follow-author-widget,
 div[display="flex"]>div[width="100%"]>span,
 parsererror,
 parsererror>div,
-parsererror>h3
-{
-   display: none !important;
-   visibility: hidden !important;
-   opacity: 0 !important;
-   max-height: 0px !important;
-   height: 0px !important;
-   transform: scale(0,0) !important;
-   position: absolute !important;
-   z-index: -99 !important;
+parsererror>h3 {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  max-height: 0px !important;
+  height: 0px !important;
+  transform: scale(0, 0) !important;
+  position: absolute !important;
+  z-index: -99 !important;
 }
 
-
-section:after{max-height:0px;} 
-
+section:after {
+  max-height: 0px;
+}
 
 div[class*="style--del-container"],
 div[style="background-color:#f4f4f4"],
 header[role="banner"],
 #masthead-container,
 div[class*="mast-head"],
-div[class*="HeaderContainer"]
-{
-   background:transparent !important;
-   border:none !important;
+div[class*="HeaderContainer"] {
+  background: transparent !important;
+  border: none !important;
 }
 
 button[aria-label="Menu"]:after,
@@ -220,26 +207,25 @@ div[class*="style--topics-wrapper"]:after,
 button[data-testid="burger-menu"]:after,
 button[class*="style--burger"]:after,
 #masthead-container:after,
-button[style="cursor:pointer"]:after
-{
-border-bottom-left-radius: 7px;
-background-color: var(--top-cyan) !important;
-white-space: pre; 
-content:"WELL STREET\AJOURNAL";
-font-family: "Times New Roman", Times, serif;
-font-size: 8px;
-height: 20px;
-text-align: right;
-position:fixed;
-z-index: 999;
-top: 0px !important;
-right: 0px !important;
-color:var(--neon-blue);
-text-shadow:
- -0.01em -0.01em 0 var(--neon-blue),
-  0.01em -0.01em 0 var(--neon-blue),
- -0.01em  0.01em 0 var(--neon-blue),
-  0.01em  0.01em 0 var(--neon-blue);
+button[style="cursor:pointer"]:after {
+  border-bottom-left-radius: 7px;
+  background-color: var(--top-cyan) !important;
+  white-space: pre;
+  content: "WELL STREET\AJOURNAL";
+  font-family: "Times New Roman", Times, serif;
+  font-size: 8px;
+  height: 20px;
+  text-align: right;
+  position: fixed;
+  z-index: 999;
+  top: 0px !important;
+  right: 0px !important;
+  color: var(--neon-blue);
+  text-shadow:
+    -0.01em -0.01em 0 var(--neon-blue),
+    0.01em -0.01em 0 var(--neon-blue),
+    -0.01em 0.01em 0 var(--neon-blue),
+    0.01em 0.01em 0 var(--neon-blue);
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: var(--neon-blue);
   text-stroke-width: 0.2px;
@@ -251,16 +237,15 @@ div[class*="style--burger"],
 div[class*="style--topics-wrapper"],
 button[data-testid="burger-menu"],
 button[class*="style--burger"],
-button[style="cursor:pointer"]
-{
-position: fixed; 
-background-color: var(--top-cyan) !important; 
-top: 0px !important;
-left: 0px !important;
-margin-left: 0px;
-padding-left: 0px;
-border-bottom-right-radius: 7px;
-color:var(--neon-blue);
+button[style="cursor:pointer"] {
+  position: fixed;
+  background-color: var(--top-cyan) !important;
+  top: 0px !important;
+  left: 0px !important;
+  margin-left: 0px;
+  padding-left: 0px;
+  border-bottom-right-radius: 7px;
+  color: var(--neon-blue);
 }
 
 html,
@@ -278,10 +263,9 @@ embed,
 object,
 div[class*="HeadlineContainer"],
 div[class*="vidThumb"],
-#big-top-caption
-{
-filter:invert(100%) hue-rotate(180deg);
-  
+#big-top-caption {
+  filter: invert(100%) hue-rotate(180deg);
+
 }
 
 html,
@@ -297,50 +281,43 @@ nav[class*="NavContainer"],
 div[class*="WhatsNewsTheme"],
 #sections-scroll-target,
 input[type="search"],
-main
-{
-   
-background-color: var(--back-blue);
+main {
+
+  background-color: var(--back-blue);
 
 }
 
 body,
-div[class*="style--more-links"]
-{
-background-color: var(--back-blue) !important;
+div[class*="style--more-links"] {
+  background-color: var(--back-blue) !important;
 }
 
-li[class*="style--menu-item"]
-{
-  background-color:var(--grey-baseline);
+li[class*="style--menu-item"] {
+  background-color: var(--grey-baseline);
 }
 
 a[title="Wellstreet"],
 a[title="WSJ.COM"],
-li[class*="style--menu-item"]>a[href*="/pro/"]
-{
+li[class*="style--menu-item"]>a[href*="/pro/"] {
 
-background-color:blue;
-  
+  background-color: blue;
+
 }
-
 
 #big-top-caption,
 h1[class*="BigTopHeadliner"],
 h1[class*="TopDek"],
-div[class*="HeadlineContainer"]
-{
-font-color:white;
-background-color:var(--back-blue-invert);
-filter: invert(1);
+div[class*="HeadlineContainer"] {
+  font-color: white;
+  background-color: var(--back-blue-invert);
+  filter: invert(1);
 }
 
 h1[class*="BigTopHeadline"],
 h2[class*="TopDek"],
 span[class*="CaptionSpan"],
-span[class*="Credit"]
-{
-  color: var(--grey-baseline) !important; 
+span[class*="Credit"] {
+  color: var(--grey-baseline) !important;
 }
 
 div.card,
@@ -349,131 +326,121 @@ header[classZ*="style--slimline"]>div[class*="style--overlay"],
 div[class^="css-"],
 div[class*="WSJTheme--thumb-overlay"],
 div[class*="WSJTheme"],
-[class*="WSJTheme--head"]
-{
-   background: transparent !important;
-   background-color: transparent !important;
-   margin: 0px !important;
+[class*="WSJTheme--head"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  margin: 0px !important;
 }
 
-div[class*="WSJTheme"]:after
-{
-   background: transparent !important;
-   background-color: transparent !important;
-   margin: 0px !important;
+div[class*="WSJTheme"]:after {
+  background: transparent !important;
+  background-color: transparent !important;
+  margin: 0px !important;
 }
 
 h3[class*="WSJTheme--headline"],
-button[id="sections"]
-{
+button[id="sections"] {
 
-color:var(--grey-baseline) !important;
-
-}
-
-
-div[class*="card__paywalled_text"]
-{
-
-   max-height:none !important;
+  color: var(--grey-baseline) !important;
 
 }
 
-div[class*="card__paywalled_text"] ul{
-   display: none !important;
-   visibility: hidden !important;
-   opacity :0 !important;
-   max-height: 0px !important;
-   height: 0px !important;
-   transform: scale(0,0) !important;
-   position: absolute !important;
-   z-index: -99 !important;
-}
-div[class*="card__paywalled_text"] strong{
-   display: none !important;
-   visibility: hidden !important;
-   opacity: 0 !important;
-   max-height: 0px !important;
-   height: 0px !important;
-   transform: scale(0,0) !important;
-   position: absolute !important;
-   z-index: -99 !important;
+div[class*="card__paywalled_text"] {
+
+  max-height: none !important;
+
 }
 
+div[class*="card__paywalled_text"] ul {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  max-height: 0px !important;
+  height: 0px !important;
+  transform: scale(0, 0) !important;
+  position: absolute !important;
+  z-index: -99 !important;
+}
+
+div[class*="card__paywalled_text"] strong {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  max-height: 0px !important;
+  height: 0px !important;
+  transform: scale(0, 0) !important;
+  position: absolute !important;
+  z-index: -99 !important;
+}
 
 a[class*="style--burger-sections-link"],
 div[class*="MoreArticlesInfoSection"],
-dev[class*="MoreArticlesInfoSection"]
-{
+dev[class*="MoreArticlesInfoSection"] {
 
-   color:blue !important;
+  color: blue !important;
 
 }
 
-img[alt="WSJ Buyside Logo"]
-{
-filter:unset;
+img[alt="WSJ Buyside Logo"] {
+  filter: unset;
 }
 
-div[class*="full-head-wrapper"]{
-position:absolute;
-z-index:888;
-left:0px;
-width:100%;
+div[class*="full-head-wrapper"] {
+  position: absolute;
+  z-index: 888;
+  left: 0px;
+  width: 100%;
 }
-
-
 
 div[class*="WSJTheme--headline"],
-div[class*="WSJTheme--timestamp"]
-{
-   padding:5px;
+div[class*="WSJTheme--timestamp"] {
+  padding: 5px;
 }
 
-a[href="https://wsj.webserve.workers.dev/buyside?mod=nav_left_section"]
-{
-padding-top:5px;
+a[href="https://wsj.webserve.workers.dev/buyside?mod=nav_left_section"] {
+  padding-top: 5px;
 }
 
 img,
 svg,
-video
-{
-   padding:5%;
+video {
+  padding: 5%;
 }
 
-p,span,h1,h2,h3,pre,a,
+p,
+span,
+h1,
+h2,
+h3,
+pre,
+a,
 {
- padding:1px;
+padding: 1px;
 }
 
-div[class*="style--open--"]
-{
-poisiton:fixed;
-z-index:999;
+div[class*="style--open--"] {
+  poisiton: fixed;
+  z-index: 999;
 }
 
-span[class*="time-to-read"]
-{
-  
+span[class*="time-to-read"] {
+
   white-space: nowrap;
-  
-}
-
-
-a[href*="https://dwsj.webserve.workers.dev"]>img
-{
-max-width:90%;
-}
-
-div.card
-{
-
-border:none !important;
 
 }
 
-li.BrainhubCarouselItem{display:grid;}
+a[href*="https://dwsj.webserve.workers.dev"]>img {
+  max-width: 90%;
+}
 
+div.card {
+
+  border: none !important;
+
+}
+
+li.BrainhubCarouselItem {
+  display: grid;
+}
 
 /* ]]>/* */
